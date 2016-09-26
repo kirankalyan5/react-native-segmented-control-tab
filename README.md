@@ -1,5 +1,5 @@
 # react-native-segmented-control-tab(for Android/iOS) 🚀
-[![npm](https://img.shields.io/npm/v/generator-ironhide-webapp.svg?style=flat-square "npm version")](https://www.npmjs.com/package/generator-ironhide-webapp)
+[![npm](https://img.shields.io/npm/v/react-native-segemented-control-tab.svg?style=flat-square "npm version")](https://www.npmjs.com/package/react-native-segemented-control-tab)
 
 A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. 💡
 
