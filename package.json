@@ -20,7 +20,7 @@
     "Android"
   ],
   "author": "Kiran Kalyan",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kirankalyan5/react-native-segmented-control-tab/issues"
   },
