@@ -1,6 +1,6 @@
-# react-native-segmented-control-tab(for Android/iOS)
+# react-native-segmented-control-tab(for Android/iOS) 🚀
 
-A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android.
+A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. 💡
 
 ## ScreenShots
 [![screen1.png](http://s13.postimg.org/hd8b53rd3/screen1.png)](http://postimg.org/image/492qsezb7/)
@@ -44,6 +44,35 @@ tabsContainerStyle | external styles can be passed to override the default style
 tabStyle | external styles can be passed to override the default styles of the tabs| base styles added in SegmentedControlTab.js  | object(styles)
 tabTitleStyle | external styles can be passed to override the default styles of the tab title| base styles added in SegmentedControlTab.js  | object(styles)
 onPress | call-back function for each item | () => {} | func
+
+## Custom styling
+  ```
+      <SegmentedControlTab tabsContainerStyle={styles.tabsContainerStyle}
+          tabStyle={styles.tabStyle}
+          tabTitleStyle={styles.tabTitleStyle}
+          selectedIndex={this.state.selected}
+          values={['First', 'Second', 'Third']}
+          onPress= {index => this.setState({selected:index})}
+          />
+
+      const styles = StyleSheet.create({
+          tabsContainerStyle: {
+            //custom styles
+          },
+          tabStyle: {
+            //custom styles
+            },
+          tabTitleStyle: {
+            //custom styles
+          }
+      })
+
+  ```
+
+
+##P.S
+🙏 credits to all the other devs who had built the similar concept, had reffered some of the there components on the github, to get a fair idea to build this.😊
+If you have any idea in implementing it further, let me know or you can update it and rise a PR.😊
 
 ## License
 *MIT*
