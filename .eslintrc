@@ -1,0 +1,89 @@
+{
+  "root": true,
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+      "jest": false,
+      "describe": false,
+      "it": false,
+      "afterEach": false,
+      "beforeEach": false,
+      "expect": false,
+      "spyOn": false
+  },
+  "plugins": [
+    "react",
+    "react-native"
+  ],
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ],
+  // details: https://github.com/yannickcr/eslint-plugin-react
+  "rules": {
+    "semi": ['error', "never"],
+    "quotes": ['error', "single"],
+    "no-unused-vars": 'error',
+    "no-irregular-whitespace": ['error', { "skipComments": true }],
+    "no-console": ['error', { "allow": ["log", "warn", 'error'] }],
+    "no-mixed-spaces-and-tabs": ['error', "smart-tabs"],
+    "react/display-name": ['error', { "ignoreTranspilerName": false }],
+    "react/forbid-prop-types": 'error',
+    "react/jsx-boolean-value": 'error',
+    "react/jsx-closing-bracket-location": 'off',
+    "react/jsx-curly-spacing": 'off',
+    "react/jsx-handler-names": 'error',
+    "react/jsx-indent-props": ['error',4],
+    "react/jsx-indent": ['error',4],
+    "react/jsx-key": 'error',
+    "react/jsx-max-props-per-line": 'error',
+    "react/jsx-no-bind": ['error', {
+        "ignoreRefs": false,
+        "allowArrowFunctions": true,
+        "allowBind": false
+    }],
+    "react/jsx-no-duplicate-props": 'error',
+    "react/jsx-no-literals": 'off',
+    "react/jsx-no-undef": 'error',
+    "react/jsx-pascal-case": 'error',
+    "jsx-quotes": ['error', "prefer-double"],
+    "react/sort-prop-types": 'error',
+    "react/jsx-sort-props": 'off',
+    "react/jsx-uses-react": 'error',
+    "react/jsx-uses-vars": 'error',
+    "react/no-danger": 'error',
+    "react/no-deprecated": 'error',
+    "react/no-did-mount-set-state": 'error',
+    "react/no-did-update-set-state": 'error',
+    "react/no-direct-mutation-state": 'error',
+    "react/no-is-mounted": 'error',
+    "react/no-multi-comp": 'error',
+    "react/no-set-state": 'off',
+    "react/no-string-refs": 'error',
+    "react/no-unknown-property": 'error',
+    "react/prefer-es6-class": 'error',
+    "react/prop-types": 'error',
+    "react/react-in-jsx-scope": 'error',
+    "react/require-extension": 'error',
+    "react/self-closing-comp": 'error',
+    "react/sort-comp": 'error',
+    "react/wrap-multilines": 'error',
+
+    // details: https://github.com/Intellicode/eslint-plugin-react-native
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2
+  }
+}
