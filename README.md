@@ -69,10 +69,9 @@ onPress | call-back function for each item | () => {} | func
 
   ```
 
-
-##P.S
-🙏 credits to all the other devs who had built the similar concept, had reffered some of the there components on the github, to get a fair idea to build this.😊
-If you have any idea in implementing it further, let me know or you can update it and rise a PR.😊
+##P.S.
+🙏 credits to all the other devs who had built the similar concept, had referred some of the their components on the github, to get a fair idea 💡 to build this.😊
+If you have any idea in implementing this further, let me know or you can update it and rise a PR.😊🚀
 
 ## License
 *MIT*
