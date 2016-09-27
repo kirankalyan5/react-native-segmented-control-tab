@@ -1,7 +1,6 @@
 # react-native-segmented-control-tab(for Android/iOS) 🚀
 [![npm](https://img.shields.io/npm/v/react-native-segmented-control-tab.svg?style=flat-square "npm version")](https://www.npmjs.com/package/react-native-segmented-control-tab)
 
-`npm install react-native-segmented-control-tab --save`
 
 A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. 💡
 
@@ -40,9 +39,9 @@ values | titles of tabs  | `['One', 'Two', 'Three']` | array
 activeColor | color of an active tab item | `#0076FF`| string
 inActiveColor | color of an inActive tab item| `white` | string
 textActiveColor | text of color in active tab | `#0076FF` | string
-borderRadius | borderRadius of whole tab | 5 | number
 textInActiveColor | text of color in inactive tab | `white` | string
 selected | index of selected tab item | 0 | number
+borderRadius | borderRadius of whole tab | 5 | number
 tabsContainerStyle | external styles can be passed to override the default styles of the segmentedControl wrapper| base styles added in SegmentedControlTab.js  | object(styles)
 tabStyle | external styles can be passed to override the default styles of the tabs| base styles added in SegmentedControlTab.js  | object(styles)
 tabTitleStyle | external styles can be passed to override the default styles of the tab title| base styles added in SegmentedControlTab.js  | object(styles)
@@ -74,7 +73,7 @@ onPress | call-back function for each item | () => {} | func
 
 ##P.S.
 🙏 credits to all the other devs who had built the similar concept, had referred some of the their components on the github, to get a fair idea 💡 to build this.😊
-If you have any idea in implementing this further, let me know or you can update it and rise a PR.😊🚀
+If you have any idea in implementing this further, let me know or you can update it and raise a PR.😊🚀
 
 ## License
 *MIT*
