@@ -14,19 +14,13 @@ A react native component with the same concept of react native's SegmantedContro
 ## Usage
 ```
 class ConsumerComponent extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            selected: 0
-        }
-    }
+
     render() {
         return (
             <View>
-                <SegmentedControlTab tabsContainerStyle={styles.tabsContainerStyle}
-                    selectedIndex={this.state.selected}
+                <SegmentedControlTab
                     values={['First', 'Second', 'Third']}
-                    onPress= {index => this.setState({selected:index})}
+                    onTabPress= {index => console.log(index))}
                     />
             </View>)
     }
@@ -36,23 +30,21 @@ class ConsumerComponent extends Component {
  Name | Description | Default | Type
 ------|-------------|----------|-----------
 values | titles of tabs  | `['One', 'Two', 'Three']` | array
-activeColor | color of an active tab item | `#0076FF`| string
-inActiveColor | color of an inActive tab item| `white` | string
-textActiveColor | text of color in active tab | `#0076FF` | string
-textInActiveColor | text of color in inactive tab | `white` | string
-selected | index of selected tab item | 0 | number
+selectedIndex | index of tab item to be selected initially| 0 | number
 borderRadius | borderRadius of whole tab | 5 | number
 tabsContainerStyle | external styles can be passed to override the default styles of the segmentedControl wrapper| base styles added in SegmentedControlTab.js  | object(styles)
 tabStyle | external styles can be passed to override the default styles of the tabs| base styles added in SegmentedControlTab.js  | object(styles)
-tabTitleStyle | external styles can be passed to override the default styles of the tab title| base styles added in SegmentedControlTab.js  | object(styles)
-onPress | call-back function for each item | () => {} | func
+tabTextStyle | external styles can be passed to override the default styles of the tab title| base styles added in SegmentedControlTab.js  | object(styles)
+activeTabStyle | external styles can be passed to override the default styles of the active tab| base styles added in SegmentedControlTab.js  | object(styles)
+activeTabTextStyle | external styles can be passed to override the default styles of the active tab text| base styles added in SegmentedControlTab.js  | object(styles)
+onTabPress | call-back function for each item | () => {} | func
 
 ## Custom styling
   ```
       <SegmentedControlTab tabsContainerStyle={styles.tabsContainerStyle}
           tabStyle={styles.tabStyle}
-          tabTitleStyle={styles.tabTitleStyle}
-          selectedIndex={this.state.selected}
+          tabTextStyle={styles.tabTitleStyle}
+          selectedIndex={1}
           values={['First', 'Second', 'Third']}
           onPress= {index => this.setState({selected:index})}
           />
