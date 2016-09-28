@@ -1,5 +1,10 @@
 # react-native-segmented-control-tab(for Android/iOS) 🚀
+
+### Lasted code in the repo let to be published with more flexibility in styling.(v1.0.4)- coming soon 🔉
+
 [![npm](https://img.shields.io/npm/v/react-native-segmented-control-tab.svg?style=flat-square "npm version")](https://www.npmjs.com/package/react-native-segmented-control-tab)
+
+
 
 
 A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. 💡
@@ -43,7 +48,9 @@ onTabPress | call-back function for each item | () => {} | func
   ```
       <SegmentedControlTab tabsContainerStyle={styles.tabsContainerStyle}
           tabStyle={styles.tabStyle}
-          tabTextStyle={styles.tabTitleStyle}
+          tabTextStyle={styles.tabTextStyle}
+          activeTabStyle={styles.activeTabStyle}
+          activeTabTextStyle={styles.activeTabTextStyle}
           selectedIndex={1}
           values={['First', 'Second', 'Third']}
           onPress= {index => this.setState({selected:index})}
@@ -56,16 +63,24 @@ onTabPress | call-back function for each item | () => {} | func
           tabStyle: {
             //custom styles
             },
-          tabTitleStyle: {
+          tabTextStyle: {
             //custom styles
-          }
+          },
+          activeTabStyle: {
+            //custom styles
+            },
+          activeTabTextStyle: {
+            //custom styles
+          },
+
       })
 
   ```
 
-##P.S.
+## P.S.
 🙏 credits to all the other devs who had built the similar concept, had referred some of the their components on the github, to get a fair idea 💡 to build this.😊
 If you have any idea in implementing this further, let me know or you can update it and raise a PR.😊🚀
 
 ## License
 *MIT*
+
