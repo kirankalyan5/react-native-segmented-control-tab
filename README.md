@@ -1,7 +1,5 @@
 # react-native-segmented-control-tab(for Android/iOS) 🚀
 
-### Lasted code in the repo let to be published with more flexibility in styling.(v1.0.4)- coming soon 🔉
-
 [![npm](https://img.shields.io/npm/v/react-native-segmented-control-tab.svg?style=flat-square "npm version")](https://www.npmjs.com/package/react-native-segmented-control-tab)
 
 
