@@ -5,7 +5,7 @@ import {
   View
 } from 'react-native';
 
-import SegmentedControlTab from 'react-native-segemented-control-tab'
+import SegmentedControlTab from 'react-native-segmented-control-tab'
 
 class ExampleMain extends Component {
   render() {
