@@ -16,6 +16,8 @@ A react native component with the same concept of react native's SegmantedContro
 
 ## Usage
 ```
+import SegmentedControlTab from 'react-native-segmented-control-tab'
+
 class ConsumerComponent extends Component {
 
     render() {
