@@ -24,9 +24,15 @@ class ExampleMain extends Component {
   render() {
     return (
       <View style={styles.container}>
-            <Text>Default segmented control</Text>
+      
+            <Text style={styles.titleText}>Default segmented control</Text>
             <SegmentedControlTab />
-            <Text>Custom segmented control with custom styles</Text>
+            <View style={styles.Seperator} />
+            <Text style={styles.titleText}>Default segmented control with Multile tab selection </Text>
+            <SegmentedControlTab multiple />
+            <View style={styles.Seperator} />
+            
+            <Text style={styles.titleText}>Custom segmented control with custom styles</Text>
             <SegmentedControlTab values={['one', 'two']}
                 onTabPress= {index => this.handleSegmentChange(index) }
                 borderRadius={0}
@@ -59,6 +65,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 50,
     fontSize: 18
+  },
+  titleText: {
+    color: '#444444',
+    padding: 20,
+    fontSize: 14,
+    fontWeight: '500'
+  },
+  Seperator: {
+    marginHorizontal: -10,
+    alignSelf: 'stretch',
+    borderTopWidth: 1,
+    borderTopColor: '#888888',
+    marginTop: 24
   }
 });
 
