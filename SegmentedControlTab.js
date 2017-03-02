@@ -6,42 +6,67 @@ import {
     Text
 } from 'react-native'
 
+const contains = (array, item) =>
+    array.findIndex((it) => it === item) != -1;
+
 class SegmentedControlTab extends Component {
 
     constructor(props) {
         super(props)
-        this.onTabPress = this.onTabPress.bind(this)
-        this.state = {
-            selectedIndex: this.props.selectedIndex
+        this.state = this.props.multiple ?
+            {
+                selectedIndices: this.props.selectedIndices,
+            } : {
+                selectedIndex: this.props.selectedIndex,
+            }
+    }
+
+    onTabPress = (index) => {
+        if (this.props.multiple) {
+            if (contains(this.state.selectedIndices, index)) {
+                this.setState({
+                    selectedIndices: this.state.selectedIndices.
+                        filter((ind) => ind !== index),
+                });
+            }
+            else {
+                this.setState({
+                    selectedIndices: [
+                        ...this.state.selectedIndices,
+                        index,
+                    ],
+                }, () => this.props.onTabPress(index));
+            }
+        }
+        else if (this.state.selectedIndex !== index) {
+            this.setState({
+                selectedIndex: index,
+            }, () => this.props.onTabPress(index));
         }
     }
 
-    onTabPress(index) {
-        this.setState({
-            selectedIndex: index
-        }, () => this.props.onTabPress(index))
-    }
-
     renderTabOption(tab, index) {
-        const {values, borderRadius} = this.props
-        const isTabActive = this.state.selectedIndex === index
+        const {values, borderRadius, multiple} = this.props
+        const isTabActive = multiple ?
+            contains(this.state.selectedIndices, index) :
+            this.state.selectedIndex === index;
         const firstTabStyle = index === 0 ? [{ borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }] : {}
         const lastTabStyle = index === values.length - 1 ? [{ borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }] : {}
 
         return (
             <TouchableOpacity style={[styles.tabStyle,
-                this.props.tabStyle,
-                isTabActive ? styles.activeTabStyle : {},
-                isTabActive ? this.props.activeTabStyle : {},
+            this.props.tabStyle,
+            isTabActive ? styles.activeTabStyle : {},
+            isTabActive ? this.props.activeTabStyle : {},
                 firstTabStyle,
                 lastTabStyle]}
                 key={index}
-                onPress={() => this.onTabPress(index) }
+                onPress={() => this.onTabPress(index)}
                 activeOpacity={1}>
                 <Text style={[styles.textStyle,
-                    this.props.tabTextStyle,
-                    isTabActive ? styles.activeTabTextStyle : {},
-                    isTabActive ? this.props.activeTabTextStyle : {}]}>{tab}</Text>
+                this.props.tabTextStyle,
+                isTabActive ? styles.activeTabTextStyle : {},
+                isTabActive ? this.props.activeTabTextStyle : {}]}>{tab}</Text>
             </TouchableOpacity>
         )
     }
@@ -51,7 +76,7 @@ class SegmentedControlTab extends Component {
         return (
             <View style={[styles.tabsContainerStyle, this.props.tabsContainerStyle]}
                 removeClippedSubviews={true}>
-                {values.map((item, index) => this.renderTabOption(item, index)) }
+                {values.map((item, index) => this.renderTabOption(item, index))}
             </View>
         )
     }
@@ -59,8 +84,10 @@ class SegmentedControlTab extends Component {
 
 SegmentedControlTab.propTypes = Object.assign({}, Component.propTypes, {
     values: PropTypes.array,
+    multiple: PropTypes.bool,
     onTabPress: PropTypes.func,
     selectedIndex: PropTypes.number,
+    selectedIndices: PropTypes.arrayOf(PropTypes.number),
     tabsContainerStyle: View.propTypes.style,
     tabStyle: View.propTypes.style,
     activeTabStyle: View.propTypes.style,
@@ -71,7 +98,9 @@ SegmentedControlTab.propTypes = Object.assign({}, Component.propTypes, {
 
 SegmentedControlTab.defaultProps = Object.assign({}, Component.propTypes, {
     values: ['One', 'Two', 'Three'],
+    multiple: false,
     selectedIndex: 0,
+    selectedIndices: [0],
     onTabPress() { },
     tabsContainerStyle: {},
     tabStyle: {},
