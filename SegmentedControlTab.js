@@ -43,10 +43,11 @@ class SegmentedControlTab extends Component {
     }
 
     renderTabOption(tab, index) {
-        const {values, borderRadius, multiple} = this.props
+        const { values, borderRadius, multiple } = this.props
         const isTabActive = multiple ?
             this.state.selectedIndices.includes(index) :
             this.state.selectedIndex === index
+
         const firstTabStyle = index === 0 ? [{ borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }] : {}
         const lastTabStyle = index === values.length - 1 ? [{ borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }] : {}
 
@@ -69,7 +70,7 @@ class SegmentedControlTab extends Component {
     }
 
     render() {
-        const {values} = this.props
+        const { values } = this.props
         return (
             <View style={[styles.tabsContainerStyle, this.props.tabsContainerStyle]}
                 removeClippedSubviews={true}>
