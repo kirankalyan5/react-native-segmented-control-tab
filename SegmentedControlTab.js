@@ -6,79 +6,78 @@ import {
     Text
 } from 'react-native'
 
-class SegmentedControlTab extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = this.props.multiple ?
-            {
-                selectedIndices: this.props.selectedIndices,
-            } : {
-                selectedIndex: this.props.selectedIndex,
-            }
+const handleTabPress = (index, multiple, selectedIndex, onTabPress) => {
+    if (multiple) {
+        onTabPress(index);
     }
-
-    onTabPress = (index) => {
-        if (this.props.multiple) {
-            if (this.state.selectedIndices.includes(index)) {
-                this.setState({
-                    selectedIndices: this.state.selectedIndices.
-                        filter((ind) => ind !== index),
-                });
-            }
-            else {
-                this.setState({
-                    selectedIndices: [
-                        ...this.state.selectedIndices,
-                        index,
-                    ],
-                }, () => this.props.onTabPress(index));
-            }
-        }
-        else if (this.state.selectedIndex !== index) {
-            this.setState({
-                selectedIndex: index,
-            }, () => this.props.onTabPress(index));
-        }
+    else if (selectedIndex !== index) {
+        onTabPress(index);
     }
+};
 
-    renderTabOption(tab, index) {
-        const { values, borderRadius, multiple } = this.props
-        const isTabActive = multiple ?
-            this.state.selectedIndices.includes(index) :
-            this.state.selectedIndex === index
 
-        const firstTabStyle = index === 0 ? [{ borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }] : {}
-        const lastTabStyle = index === values.length - 1 ? [{ borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }] : {}
-
-        return (
-            <TouchableOpacity style={[styles.tabStyle,
-            this.props.tabStyle,
-            isTabActive ? styles.activeTabStyle : {},
-            isTabActive ? this.props.activeTabStyle : {},
-                firstTabStyle,
-                lastTabStyle]}
-                key={index}
-                onPress={() => this.onTabPress(index)}
-                activeOpacity={1}>
-                <Text style={[styles.textStyle,
-                this.props.tabTextStyle,
+const TabOption = ({
+    isTabActive, index, text,
+    firstTabStyle, lastTabStyle,
+    tabStyle, activeTabStyle,
+    tabTextStyle, activeTabTextStyle,
+    onTabPress,
+}) => {
+    return (
+        <TouchableOpacity style={[
+            styles.tabStyle,
+            tabStyle,
+            isTabActive ? [styles.activeTabStyle, activeTabStyle] : {},
+            firstTabStyle,
+            lastTabStyle]}
+            onPress={() => onTabPress(index)}
+            activeOpacity={1}>
+            <Text style={[
+                styles.textStyle,
+                tabTextStyle,
                 isTabActive ? styles.activeTabTextStyle : {},
-                isTabActive ? this.props.activeTabTextStyle : {}]}>{tab}</Text>
-            </TouchableOpacity>
-        )
-    }
-
-    render() {
-        const { values } = this.props
-        return (
-            <View style={[styles.tabsContainerStyle, this.props.tabsContainerStyle]}
-                removeClippedSubviews={true}>
-                {values.map((item, index) => this.renderTabOption(item, index))}
-            </View>
-        )
-    }
+                isTabActive ? activeTabTextStyle : {}]}>
+                {text}
+            </Text>
+        </TouchableOpacity>
+    );
 }
+
+const SegmentedControlTab = ({
+    multiple, selectedIndex, selectedIndices, values,
+    borderRadius, tabsContainerStyle,
+    tabStyle, activeTabStyle,
+    tabTextStyle, activeTabTextStyle,
+    onTabPress,
+}) => {
+    const firstTabStyle = [{ borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }];
+    const lastTabStyle = [{ borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }];
+
+    return (
+        <View
+            style={[styles.tabsContainerStyle, tabsContainerStyle]}
+            removeClippedSubviews={true}>
+            {
+                values.map((item, index) => {
+                    return (
+                        <TabOption
+                            key={index}
+                            index={index}
+                            isTabActive={multiple ? selectedIndices.includes(index) : selectedIndex === index}
+                            text={item}
+                            onTabPress={(index) => handleTabPress(index, multiple, selectedIndex, onTabPress)}
+                            firstTabStyle={index === 0 ? firstTabStyle : {}}
+                            lastTabStyle={index === values.length - 1 ? lastTabStyle : {}}
+                            tabStyle={tabStyle}
+                            activeTabStyle={activeTabStyle}
+                            tabTextStyle={tabTextStyle}
+                            activeTabTextStyle={activeTabTextStyle} />
+                    );
+                })
+            }
+        </View>
+    );
+};
 
 SegmentedControlTab.propTypes = Object.assign({}, Component.propTypes, {
     values: PropTypes.array,
