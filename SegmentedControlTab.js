@@ -6,9 +6,6 @@ import {
     Text
 } from 'react-native'
 
-const contains = (array, item) =>
-    array.findIndex((it) => it === item) != -1;
-
 class SegmentedControlTab extends Component {
 
     constructor(props) {
@@ -23,7 +20,7 @@ class SegmentedControlTab extends Component {
 
     onTabPress = (index) => {
         if (this.props.multiple) {
-            if (contains(this.state.selectedIndices, index)) {
+            if (this.state.selectedIndices.includes(index)) {
                 this.setState({
                     selectedIndices: this.state.selectedIndices.
                         filter((ind) => ind !== index),
@@ -46,9 +43,9 @@ class SegmentedControlTab extends Component {
     }
 
     renderTabOption(tab, index) {
-        const {values, borderRadius, multiple} = this.props
+        const { values, borderRadius, multiple } = this.props
         const isTabActive = multiple ?
-            contains(this.state.selectedIndices, index) :
+            this.state.selectedIndices.includes(index) :
             this.state.selectedIndex === index;
         const firstTabStyle = index === 0 ? [{ borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }] : {}
         const lastTabStyle = index === values.length - 1 ? [{ borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }] : {}
@@ -72,7 +69,7 @@ class SegmentedControlTab extends Component {
     }
 
     render() {
-        const {values} = this.props
+        const { values } = this.props
         return (
             <View style={[styles.tabsContainerStyle, this.props.tabsContainerStyle]}
                 removeClippedSubviews={true}>
