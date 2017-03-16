@@ -68,7 +68,7 @@ const SegmentedControlTab = ({
                             onTabPress={(index) => handleTabPress(index, multiple, selectedIndex, onTabPress)}
                             firstTabStyle={index === 0 ? firstTabStyle : {}}
                             lastTabStyle={index === values.length - 1 ? lastTabStyle : {}}
-                            tabStyle={tabStyle}
+                            tabStyle={[tabStyle, index !== 0 && index !== values.length - 1 ? { marginHorizontal: -1 } : {}]}
                             activeTabStyle={activeTabStyle}
                             tabTextStyle={tabTextStyle}
                             activeTabTextStyle={activeTabTextStyle} />
