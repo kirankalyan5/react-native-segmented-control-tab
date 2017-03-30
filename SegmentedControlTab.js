@@ -35,8 +35,7 @@ const TabOption = ({
             <Text style={[
                 styles.textStyle,
                 tabTextStyle,
-                isTabActive ? styles.activeTabTextStyle : {},
-                isTabActive ? activeTabTextStyle : {}]}>
+                isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}>
                 {text}
             </Text>
         </TouchableOpacity>
