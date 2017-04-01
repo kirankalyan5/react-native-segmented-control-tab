@@ -17,7 +17,8 @@
     "SegmentedControlIOS",
     "SegmentedControlTab",
     "IOS",
-    "Android"
+    "Android",
+    "controlled SegmentedControlTab"
   ],
   "author": "Kiran Kalyan",
   "license": "MIT",

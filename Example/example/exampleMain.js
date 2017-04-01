@@ -74,6 +74,11 @@ class ExampleMain extends Component {
                     activeTabStyle={{ backgroundColor: 'white', marginTop: 2 }}
                     tabTextStyle={{ color: '#444444', fontWeight: 'bold' }}
                     activeTabTextStyle={{ color: '#888888' }} />
+                    {this.state.customStyleIndex === 0 && 
+                    <Text style={styles.tabContent} > Tab one</Text>}
+                    {this.state.customStyleIndex === 1 && 
+                    <Text style={styles.tabContent} > Tab two</Text>}
+                    
             </View>
         );
     }
@@ -103,6 +108,11 @@ const styles = StyleSheet.create({
       padding: 8,
       fontSize: 14,
       color: '#444444'
+  },
+  tabContent: {
+      color: '#444444',
+      fontSize: 18,
+      margin: 24
   },
   Seperator: {
     marginHorizontal: -10,
