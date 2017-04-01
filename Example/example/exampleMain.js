@@ -52,18 +52,18 @@ class ExampleMain extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Default segmented control with single selection</Text>
+                <Text style={styles.headerText} >Default segmented control with single selection</Text>
                 <SegmentedControlTab
                     selectedIndex={this.state.selectedIndex}
                     onTabPress={this.handleSingleIndexSelect} />
             <View style={styles.Seperator} />
-                <Text>Default segmented control with multiple selection</Text>
+                <Text style={styles.headerText} >Default segmented control with multiple selection</Text>
                 <SegmentedControlTab
                     multiple={true}
                     selectedIndices={this.state.selectedIndices}
                     onTabPress={this.handleMultipleIndexSelect} />
             <View style={styles.Seperator} />
-                <Text>Custom segmented control with custom styles</Text>
+                <Text style={styles.headerText} >Custom segmented control with custom styles</Text>
                 <SegmentedControlTab
                     values={['one', 'two']}
                     selectedIndex={this.state.customStyleIndex}
@@ -98,6 +98,11 @@ const styles = StyleSheet.create({
     padding: 20,
     fontSize: 14,
     fontWeight: '500'
+  },
+  headerText: {
+      padding: 8,
+      fontSize: 14,
+      color: '#444444'
   },
   Seperator: {
     marginHorizontal: -10,

@@ -55,7 +55,8 @@ class ConsumerComponent extends Component {
  Name | Description | Default | Type
 ------|-------------|----------|-----------
 values | titles of tabs  | `['One', 'Two', 'Three']` | array
-selectedIndex | index of tab item to be selected initially| [0] | arrayOf(PropTypes.number)
+selectedIndex | index of tab item to be selected initially| [0] | number
+selectedIndices |Array of indices of tab items to be selected initially - when multiple prop is true else it will take selectedIndex| [0] | arrayOf(PropTypes.number)
 multiple | Boolean which enables the multiple selection option | false | bool
 borderRadius | borderRadius of whole tab | 5 | number
 tabsContainerStyle | external styles can be passed to override the default styles of the segmentedControl wrapper| base styles added in SegmentedControlTab.js  | object(styles)
