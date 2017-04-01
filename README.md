@@ -12,7 +12,7 @@ A react native component with the same concept of react native's SegmantedContro
 
 ![screen2](http://s11.postimg.org/onlfshx2r/screen2.png)
 
-![Screen3](https://s21.postimg.org/4lp3vyx7r/Screen_Shot_2017-04-01_at_12.48.15_PM.png)
+[![Screen3](https://s8.postimg.org/m3hzyuvud/Screen_Shot_2017-04-01_at_1.15.25_PM.png)
 
 ## Install
 `npm install react-native-segmented-control-tab --save`
