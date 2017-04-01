@@ -14,15 +14,19 @@ A react native component with the same concept of react native's SegmantedContro
 
 [![Screen3](https://s8.postimg.org/m3hzyuvud/Screen_Shot_2017-04-01_at_1.15.25_PM.png)
 
+
 ## Install
-`npm install react-native-segmented-control-tab --save`
+
+```shell
+npm install react-native-segmented-control-tab --save
+```
 
 ## Usage
 
 ### IMPORTANT
 This has been made into a controlled component from 3.0. Those who are familiar with 2.0, read below for the updated usage.
 
-```
+```javascript
 import SegmentedControlTab from 'react-native-segmented-control-tab'
 
 class ConsumerComponent extends Component {
@@ -70,7 +74,7 @@ activeTabTextStyle | external styles can be passed to override the default style
 onTabPress | call-back function when a tab is selected | () => {} | func
 
 ## Custom styling
-  ```
+  ```javascript
       <SegmentedControlTab tabsContainerStyle={styles.tabsContainerStyle}
           tabStyle={styles.tabStyle}
           tabTextStyle={styles.tabTextStyle}
