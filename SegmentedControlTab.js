@@ -5,7 +5,6 @@ import {
     StyleSheet,
     Text
 } from 'react-native'
-import Toast from 'react-native-root-toast'
 class SegmentedControlTab extends Component {
 
     constructor(props) {
@@ -32,7 +31,6 @@ class SegmentedControlTab extends Component {
         const isTabActive = this.state.selectedIndex === index
         const firstTabStyle = index === 0 ? [{ borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }] : {}
         const lastTabStyle = index === values.length - 1 ? [{ borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }] : {}
-        console.log(this)
         return (
             <TouchableOpacity style={[styles.tabStyle,
                 this.props.tabStyle,
