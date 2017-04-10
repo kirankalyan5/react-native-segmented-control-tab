@@ -16,9 +16,7 @@ class SegmentedControlTab extends Component {
     }
     componentWillReceiveProps(props){
         const {selectedIndex} = props;
-        if(selectedIndex){
-            this.setState({selectedIndex});
-        }
+        this.setState({selectedIndex});
     }
     onTabPress(index) {
         this.setState({
