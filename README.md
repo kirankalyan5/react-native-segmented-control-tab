@@ -5,7 +5,7 @@
 
 
 
-A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. 💡
+A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. React-Native-Web support is also added 💡
 
 ## ScreenShots
 ![screen1](http://s13.postimg.org/hd8b53rd3/screen1.png)
@@ -105,6 +105,19 @@ onTabPress | call-back function when a tab is selected | () => {} | func
       })
 
   ```
+
+## Web
+Make sure to add support for .web.js in your webpack.config file (if you use webpack)
+```javascript
+// webpack.config.js
+
+module.exports = {
+    // ...
+    resolve: {
+        extensions: [ '.web.js', '.js' ]
+    }
+};
+```
 
 ## P.S.
 🙏 credits to all the other devs who had built the similar concept, had referred some of the their components on the github, to get a fair idea 💡 to build this.😊
