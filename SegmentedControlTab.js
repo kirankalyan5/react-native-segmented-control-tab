@@ -55,7 +55,7 @@ const SegmentedControlTab = ({
     return (
         <View
             style={[styles.tabsContainerStyle, tabsContainerStyle]}
-            removeClippedSubviews={true}>
+            removeClippedSubviews={false}>
             {
                 values.map((item, index) => {
                     return (
