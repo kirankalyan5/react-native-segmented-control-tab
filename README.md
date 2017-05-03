@@ -14,6 +14,12 @@ A react native component with the same concept of react native's SegmantedContro
 
 [![Screen3](https://s8.postimg.org/m3hzyuvud/Screen_Shot_2017-04-01_at_1.15.25_PM.png)
 
+#### React-Native-Web (on Chrome)
+![alt text](https://raw.githubusercontent.com/kjellconnelly/react-native-segmented-control-tab/master/web_example/ss.png "Web - Chrome")
+
+See the Segment Control live in your browser (it might take a few seconds to load)
+[View in Browser](http://htmlpreview.github.com/?https://raw.githubusercontent.com/kjellconnelly/react-native-segmented-control-tab/master/web_example/index.html)
+
 
 ## Install
 
