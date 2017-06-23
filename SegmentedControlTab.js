@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import {
     View,
     TouchableOpacity,
     StyleSheet,
     Text
 } from 'react-native'
+import PropTypes from 'prop-types';
 
 const handleTabPress = (index, multiple, selectedIndex, onTabPress) => {
     if (multiple) {
@@ -78,7 +79,7 @@ const SegmentedControlTab = ({
     );
 };
 
-SegmentedControlTab.propTypes = Object.assign({}, Component.propTypes, {
+SegmentedControlTab.propTypes = {
     values: PropTypes.array,
     multiple: PropTypes.bool,
     onTabPress: PropTypes.func,
@@ -90,9 +91,9 @@ SegmentedControlTab.propTypes = Object.assign({}, Component.propTypes, {
     tabTextStyle: Text.propTypes.style,
     activeTabTextStyle: Text.propTypes.style,
     borderRadius: PropTypes.number
-})
+}
 
-SegmentedControlTab.defaultProps = Object.assign({}, Component.propTypes, {
+SegmentedControlTab.defaultProps =  {
     values: ['One', 'Two', 'Three'],
     multiple: false,
     selectedIndex: 0,
@@ -104,7 +105,7 @@ SegmentedControlTab.defaultProps = Object.assign({}, Component.propTypes, {
     textStyle: {},
     activeTextStyle: {},
     borderRadius: 5
-})
+}
 
 const styles = StyleSheet.create({
     tabsContainerStyle: {

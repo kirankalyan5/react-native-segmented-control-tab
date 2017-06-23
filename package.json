@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/kirankalyan5/react-native-segmented-control-tab/issues"
   },
-  "homepage": "https://github.com/kirankalyan5/react-native-segmented-control-tab#readme"
+  "homepage": "https://github.com/kirankalyan5/react-native-segmented-control-tab#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  }
 }
