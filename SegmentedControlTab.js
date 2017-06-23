@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
     View,
+    ViewPropTypes,
     TouchableOpacity,
     StyleSheet,
     Text
@@ -85,9 +86,9 @@ SegmentedControlTab.propTypes = {
     onTabPress: PropTypes.func,
     selectedIndex: PropTypes.number,
     selectedIndices: PropTypes.arrayOf(PropTypes.number),
-    tabsContainerStyle: View.propTypes.style,
-    tabStyle: View.propTypes.style,
-    activeTabStyle: View.propTypes.style,
+    tabsContainerStyle: ViewPropTypes.style,
+    tabStyle: ViewPropTypes.style,
+    activeTabStyle: ViewPropTypes.style,
     tabTextStyle: Text.propTypes.style,
     activeTabTextStyle: Text.propTypes.style,
     borderRadius: PropTypes.number
