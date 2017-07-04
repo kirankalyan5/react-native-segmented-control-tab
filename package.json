@@ -1,6 +1,6 @@
 {
   "name": "react-native-segmented-control-tab",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android.",
   "main": "SegmentedControlTab.js",
   "scripts": {
@@ -17,12 +17,16 @@
     "SegmentedControlIOS",
     "SegmentedControlTab",
     "IOS",
-    "Android"
+    "Android",
+    "controlled SegmentedControlTab"
   ],
   "author": "Kiran Kalyan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kirankalyan5/react-native-segmented-control-tab/issues"
   },
-  "homepage": "https://github.com/kirankalyan5/react-native-segmented-control-tab#readme"
+  "homepage": "https://github.com/kirankalyan5/react-native-segmented-control-tab#readme",
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  }
 }

@@ -1,10 +1,12 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import {
     View,
+    ViewPropTypes,
     TouchableOpacity,
     StyleSheet,
     Text
 } from 'react-native'
+import PropTypes from 'prop-types';
 
 const handleTabPress = (index, multiple, selectedIndex, onTabPress) => {
     if (multiple) {
@@ -34,27 +36,29 @@ const TabOption = ({
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
             <View style={{flexDirection:"row"}}>
-                <Text style={[
-                    styles.textStyle,
-                    tabTextStyle,
-                    isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}>
-                    {text}
-                </Text>
-                {
-                    badge ?
-                    <View style={[
-                        styles.tabBadgeContainerStyle,
-                        tabBadgeContainerStyle,
-                        isTabActive ? [styles.activeTabBadgeContainerStyle, activeTabBadgeContainerStyle]: {}]}>
-                        <Text style={[
-                            styles.tabBadgeStyle,
-                            tabBadgeStyle,
-                            isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle]: {}]}>
-                            {badge}
-                        </Text>
-                    </View>: false
-                }
-            </View>
+              <Text style={[
+                  styles.tabTextStyle,
+                  tabTextStyle,
+                  isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}
+                  numberOfLines={1}
+                  ellipsizeMode="tail">
+                  {text}
+              </Text>
+              {
+                  badge ?
+                  <View style={[
+                      styles.tabBadgeContainerStyle,
+                      tabBadgeContainerStyle,
+                      isTabActive ? [styles.activeTabBadgeContainerStyle, activeTabBadgeContainerStyle]: {}]}>
+                      <Text style={[
+                          styles.tabBadgeStyle,
+                          tabBadgeStyle,
+                          isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle]: {}]}>
+                          {badge}
+                      </Text>
+                  </View>: false
+              }
+          </View>
         </TouchableOpacity>
     );
 }
@@ -74,7 +78,7 @@ const SegmentedControlTab = ({
     return (
         <View
             style={[styles.tabsContainerStyle, tabsContainerStyle]}
-            removeClippedSubviews={true}>
+            removeClippedSubviews={false}>
             {
                 values.map((item, index) => {
                     return (
@@ -102,16 +106,16 @@ const SegmentedControlTab = ({
     );
 };
 
-SegmentedControlTab.propTypes = Object.assign({}, Component.propTypes, {
+SegmentedControlTab.propTypes = {
     values: PropTypes.array,
     badges: PropTypes.array,
     multiple: PropTypes.bool,
     onTabPress: PropTypes.func,
     selectedIndex: PropTypes.number,
     selectedIndices: PropTypes.arrayOf(PropTypes.number),
-    tabsContainerStyle: View.propTypes.style,
-    tabStyle: View.propTypes.style,
-    activeTabStyle: View.propTypes.style,
+    tabsContainerStyle: ViewPropTypes.style,
+    tabStyle: ViewPropTypes.style,
+    activeTabStyle: ViewPropTypes.style,
     tabTextStyle: Text.propTypes.style,
     activeTabTextStyle: Text.propTypes.style,
     tabBadgeContainerStyle: Text.propTypes.style,
@@ -119,9 +123,9 @@ SegmentedControlTab.propTypes = Object.assign({}, Component.propTypes, {
     tabBadgeStyle: Text.propTypes.style,
     activeTabBadgeStyle: Text.propTypes.style,
     borderRadius: PropTypes.number
-})
+}
 
-SegmentedControlTab.defaultProps = Object.assign({}, Component.propTypes, {
+SegmentedControlTab.defaultProps =  {
     values: ['One', 'Two', 'Three'],
     badges: ['', '', ''],
     multiple: false,
@@ -138,7 +142,7 @@ SegmentedControlTab.defaultProps = Object.assign({}, Component.propTypes, {
     tabBadgeStyle: {},
     activeTabBadgeStyle: {},
     borderRadius: 5
-})
+}
 
 const styles = StyleSheet.create({
     tabsContainerStyle: {
