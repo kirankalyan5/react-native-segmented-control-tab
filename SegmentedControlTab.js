@@ -35,9 +35,11 @@ const TabOption = ({
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
             <Text style={[
-                styles.textStyle,
+                styles.tabTextStyle,
                 tabTextStyle,
-                isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}>
+                isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}
+                numberOfLines={1}
+                ellipsizeMode="tail">
                 {text}
             </Text>
         </TouchableOpacity>
