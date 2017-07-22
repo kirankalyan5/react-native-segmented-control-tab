@@ -6,14 +6,20 @@
 [![NPM](https://nodei.co/npm/react-native-segmented-control-tab.png?compact=true)](https://npmjs.org/package/react-native-segmented-control-tab)
 
 
-A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. 💡
+A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. React-Native-Web support is also added 💡
 
 ## ScreenShots
 ![screen1](http://s13.postimg.org/hd8b53rd3/screen1.png)
 
 ![screen2](http://s11.postimg.org/onlfshx2r/screen2.png)
 
-[![Screen3](https://s8.postimg.org/m3hzyuvud/Screen_Shot_2017-04-01_at_1.15.25_PM.png)
+![Screen3](https://s8.postimg.org/m3hzyuvud/Screen_Shot_2017-04-01_at_1.15.25_PM.png)
+
+#### React-Native-Web (on Chrome)
+![Web Chrome](https://raw.githubusercontent.com/kjellconnelly/react-native-segmented-control-tab/master/web_example/ss.png "Web - Chrome")
+
+See the Segment Control live in your browser (it might take a few seconds to load)
+[View in Browser](http://htmlpreview.github.com/?https://raw.githubusercontent.com/kjellconnelly/react-native-segmented-control-tab/master/web_example/index.html)
 
 
 ## Install
@@ -106,6 +112,19 @@ onTabPress | call-back function when a tab is selected | () => {} | func
       })
 
   ```
+
+## Web
+Make sure to add support for .web.js in your webpack.config file (if you use webpack)
+```javascript
+// webpack.config.js
+
+module.exports = {
+    // ...
+    resolve: {
+        extensions: [ '.web.js', '.js' ]
+    }
+};
+```
 
 ## P.S.
 🙏 credits to all the other devs who had built the similar concept, had referred some of the their components on the github, to get a fair idea 💡 to build this.😊
