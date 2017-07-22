@@ -56,13 +56,19 @@ class ExampleMain extends Component {
                 <SegmentedControlTab
                     selectedIndex={this.state.selectedIndex}
                     onTabPress={this.handleSingleIndexSelect} />
-            <View style={styles.Seperator} />
+                <View style={styles.Seperator} />
                 <Text style={styles.headerText} >Default segmented control with multiple selection</Text>
                 <SegmentedControlTab
                     multiple={true}
                     selectedIndices={this.state.selectedIndices}
                     onTabPress={this.handleMultipleIndexSelect} />
-            <View style={styles.Seperator} />
+                <View style={styles.Seperator} />
+                <Text style={styles.headerText} >Default segmented with badges</Text>
+                <SegmentedControlTab
+                    badges={[1, 2, 3]}
+                    selectedIndex={this.state.selectedIndex}
+                    onTabPress={this.handleSingleIndexSelect} />
+                <View style={styles.Seperator} />
                 <Text style={styles.headerText} >Custom segmented control with custom styles</Text>
                 <SegmentedControlTab
                     values={['one', 'two']}
@@ -74,53 +80,53 @@ class ExampleMain extends Component {
                     activeTabStyle={{ backgroundColor: 'white', marginTop: 2 }}
                     tabTextStyle={{ color: '#444444', fontWeight: 'bold' }}
                     activeTabTextStyle={{ color: '#888888' }} />
-                    {this.state.customStyleIndex === 0 && 
+                {this.state.customStyleIndex === 0 &&
                     <Text style={styles.tabContent} > Tab one</Text>}
-                    {this.state.customStyleIndex === 1 && 
+                {this.state.customStyleIndex === 1 &&
                     <Text style={styles.tabContent} > Tab two</Text>}
-                    
+
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    padding: 10
-  },
-  tabViewText: {
-    color: '#444444',
-    fontWeight: 'bold',
-    marginTop: 50,
-    fontSize: 18
-  },
-  titleText: {
-    color: '#444444',
-    padding: 20,
-    fontSize: 14,
-    fontWeight: '500'
-  },
-  headerText: {
-      padding: 8,
-      fontSize: 14,
-      color: '#444444'
-  },
-  tabContent: {
-      color: '#444444',
-      fontSize: 18,
-      margin: 24
-  },
-  Seperator: {
-    marginHorizontal: -10,
-    alignSelf: 'stretch',
-    borderTopWidth: 1,
-    borderTopColor: '#888888',
-    marginTop: 24
-  }
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        padding: 10
+    },
+    tabViewText: {
+        color: '#444444',
+        fontWeight: 'bold',
+        marginTop: 50,
+        fontSize: 18
+    },
+    titleText: {
+        color: '#444444',
+        padding: 20,
+        fontSize: 14,
+        fontWeight: '500'
+    },
+    headerText: {
+        padding: 8,
+        fontSize: 14,
+        color: '#444444'
+    },
+    tabContent: {
+        color: '#444444',
+        fontSize: 18,
+        margin: 24
+    },
+    Seperator: {
+        marginHorizontal: -10,
+        alignSelf: 'stretch',
+        borderTopWidth: 1,
+        borderTopColor: '#888888',
+        marginTop: 24
+    }
 })
 
 
