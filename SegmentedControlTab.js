@@ -35,30 +35,30 @@ const TabOption = ({
             lastTabStyle]}
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
-            <View style={{flexDirection:"row"}}>
-              <Text style={[
-                  styles.tabTextStyle,
-                  tabTextStyle,
-                  isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}
-                  numberOfLines={1}
-                  ellipsizeMode="tail">
-                  {text}
-              </Text>
-              {
-                  badge ?
-                  <View style={[
-                      styles.tabBadgeContainerStyle,
-                      tabBadgeContainerStyle,
-                      isTabActive ? [styles.activeTabBadgeContainerStyle, activeTabBadgeContainerStyle]: {}]}>
-                      <Text style={[
-                          styles.tabBadgeStyle,
-                          tabBadgeStyle,
-                          isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle]: {}]}>
-                          {badge}
-                      </Text>
-                  </View>: false
-              }
-          </View>
+            <View style={{ flexDirection: "row" }}>
+                <Text style={[
+                    styles.tabTextStyle,
+                    tabTextStyle,
+                    isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}
+                    numberOfLines={1}
+                    ellipsizeMode="tail">
+                    {text}
+                </Text>
+                {
+                    badge ?
+                        <View style={[
+                            styles.tabBadgeContainerStyle,
+                            tabBadgeContainerStyle,
+                            isTabActive ? [styles.activeTabBadgeContainerStyle, activeTabBadgeContainerStyle] : {}]}>
+                            <Text style={[
+                                styles.tabBadgeStyle,
+                                tabBadgeStyle,
+                                isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle] : {}]}>
+                                {badge}
+                            </Text>
+                        </View> : false
+                }
+            </View>
         </TouchableOpacity>
     );
 }
@@ -72,8 +72,9 @@ const SegmentedControlTab = ({
     tabBadgeStyle, activeTabBadgeStyle,
     onTabPress,
 }) => {
-    const firstTabStyle = [{ borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }];
-    const lastTabStyle = [{ borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }];
+
+    const firstTabStyle = [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
+    const lastTabStyle = [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
 
     return (
         <View
@@ -89,9 +90,9 @@ const SegmentedControlTab = ({
                             isTabActive={multiple ? selectedIndices.includes(index) : selectedIndex === index}
                             text={item}
                             onTabPress={(index) => handleTabPress(index, multiple, selectedIndex, onTabPress)}
-                            firstTabStyle={index === 0 ? [{ borderRightWidth: 0 }, firstTabStyle ] : {}}
-                            lastTabStyle={index === values.length - 1 ? [{ borderLeftWidth: 0 }, lastTabStyle ] : {}}
-                            tabStyle={[tabStyle, index !== 0 && index !== values.length - 1 ? { marginHorizontal: -1 } : {}]}
+                            firstTabStyle={index === 0 ? [{ borderRightWidth: 0 }, firstTabStyle] : {}}
+                            lastTabStyle={index === values.length - 1 ? [{ borderLeftWidth: 0 }, lastTabStyle] : {}}
+                            tabStyle={[tabStyle, index !== 0 && index !== values.length - 1 ? { paddingLeft: -1 } : {}]}
                             activeTabStyle={activeTabStyle}
                             tabTextStyle={tabTextStyle}
                             activeTabTextStyle={activeTabTextStyle}
@@ -125,7 +126,7 @@ SegmentedControlTab.propTypes = {
     borderRadius: PropTypes.number
 }
 
-SegmentedControlTab.defaultProps =  {
+SegmentedControlTab.defaultProps = {
     values: ['One', 'Two', 'Three'],
     badges: ['', '', ''],
     multiple: false,
