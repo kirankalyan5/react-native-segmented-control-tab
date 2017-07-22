@@ -13,9 +13,7 @@ A react native component with the same concept of react native's SegmantedContro
 
 ![screen2](http://s11.postimg.org/onlfshx2r/screen2.png)
 
-[![Screen3](https://s8.postimg.org/m3hzyuvud/Screen_Shot_2017-04-01_at_1.15.25_PM.png)
-
-
+[![Screen3](https://s11.postimg.org/gt8zuvwoz/Screen_Shot_2017-07-22_at_10.30.15_AM.png)](https://postimg.org/image/s5llco5dr/)
 ## Install
 
 ```shell
@@ -72,6 +70,7 @@ tabStyle | external styles can be passed to override the default styles of the t
 tabTextStyle | external styles can be passed to override the default styles of the tab title| base styles added in SegmentedControlTab.js  | object(styles)
 activeTabStyle | external styles can be passed to override the default styles of the active tab| base styles added in SegmentedControlTab.js  | object(styles)
 activeTabTextStyle | external styles can be passed to override the default styles of the active tab text| base styles added in SegmentedControlTab.js  | object(styles)
+badges | badges values to display  | `[1, 2, 3]` | array
 tabBadgeContainerStyle | external style can be passed to override the default style of the badge container | base styles added in SegmentedControlTab.js  | object(styles)
 activeTabBadgeContainerStyle | external style can be passed to override the default style of the active badge container | base styles added in SegmentedControlTab.js  | object(styles)
 tabBadgeStyle | external style can be passed to override the default style of the badge text | base styles added in SegmentedControlTab.js  | object(styles)
