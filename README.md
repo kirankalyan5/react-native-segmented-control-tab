@@ -1,5 +1,5 @@
 # react-native-segmented-control-tab(for Android/iOS) 🚀
-[![NPM version](https://badge.fury.io/js/react-native-segmented-control-tab.svg)](https://npmjs.org/package/react-native-segmented-control-tab)
+[![npm](https://img.shields.io/npm/v/react-native-segmented-control-tab.svg?style=flat-square "npm version")](https://www.npmjs.com/package/react-native-segmented-control-tab)
 [![Monthly Downloads](https://img.shields.io/npm/dm/react-native-segmented-control-tab.svg)](https://npmjs.org/package/react-native-segmented-control-tab)
 [ ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/kirankalyan5/react-native-segmented-control-tab/pulls)
 
