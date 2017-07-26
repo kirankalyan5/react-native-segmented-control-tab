@@ -14,7 +14,7 @@ A react native component with the same concept of react native's SegmantedContro
 
 ![screen2](http://s11.postimg.org/onlfshx2r/screen2.png)
 
-[![Screen3](https://s11.postimg.org/gt8zuvwoz/Screen_Shot_2017-07-22_at_10.30.15_AM.png)](https://postimg.org/image/s5llco5dr/)
+[![Screen3](https://s2.postimg.org/efbha5qah/Screen_Shot_2017-07-26_at_8.41.12_AM.png)](https://postimg.org/image/dpsoxspqt/)
 ## Install
 
 ```shell
