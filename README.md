@@ -70,6 +70,8 @@ tabsContainerStyle | external styles can be passed to override the default style
 tabStyle | external styles can be passed to override the default styles of the tabs| base styles added in SegmentedControlTab.js  | object(styles)
 tabTextStyle | external styles can be passed to override the default styles of the tab title| base styles added in SegmentedControlTab.js  | object(styles)
 activeTabStyle | external styles can be passed to override the default styles of the active tab| base styles added in SegmentedControlTab.js  | object(styles)
+firstTabStyle | external styles can be passed to override the default styles of the first tab| base styles added in SegmentedControlTab.js  | object(styles)
+lastTabStyle | external styles can be passed to override the default styles of the last tab| base styles added in SegmentedControlTab.js  | object(styles)
 activeTabTextStyle | external styles can be passed to override the default styles of the active tab text| base styles added in SegmentedControlTab.js  | object(styles)
 badges | badges values to display  | `[1, 2, 3]` | array
 tabBadgeContainerStyle | external style can be passed to override the default style of the badge container | base styles added in SegmentedControlTab.js  | object(styles)
@@ -101,6 +103,12 @@ onTabPress | call-back function when a tab is selected | () => {} | func
             //custom styles
           },
           activeTabStyle: {
+            //custom styles
+            },
+          firstTabStyle: {
+            //custom styles
+            },
+          lastTabStyle: {
             //custom styles
             },
           activeTabTextStyle: {
