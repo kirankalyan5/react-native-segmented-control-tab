@@ -70,11 +70,13 @@ const SegmentedControlTab = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress,
+    onTabPress, firstTabStyle, lastTabStyle,
 }) => {
 
-    const firstTabStyle = [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
-    const lastTabStyle = [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
+    firstTabStyle = firstTabStyle ? firstTabStyle :
+        [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
+    lastTabStyle = lastTabStyle ? lastTabStyle :
+        [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
 
     return (
         <View
@@ -90,8 +92,8 @@ const SegmentedControlTab = ({
                             isTabActive={multiple ? selectedIndices.includes(index) : selectedIndex === index}
                             text={item}
                             onTabPress={(index) => handleTabPress(index, multiple, selectedIndex, onTabPress)}
-                            firstTabStyle={index === 0 ? [{ borderRightWidth: 0 }, firstTabStyle] : {}}
-                            lastTabStyle={index === values.length - 1 ? [{ borderLeftWidth: 0 }, lastTabStyle] : {}}
+                            firstTabStyle={index === 0 ? firstTabStyle : {}}
+                            lastTabStyle={index === values.length - 1 ? lastTabStyle : {}}
                             tabStyle={[tabStyle, index !== 0 && index !== values.length - 1 ? { paddingLeft: -1 } : {}]}
                             activeTabStyle={activeTabStyle}
                             tabTextStyle={tabTextStyle}
@@ -117,6 +119,8 @@ SegmentedControlTab.propTypes = {
     tabsContainerStyle: ViewPropTypes.style,
     tabStyle: ViewPropTypes.style,
     activeTabStyle: ViewPropTypes.style,
+    firstTabStyle: ViewPropTypes.style,
+    lastTabStyle: ViewPropTypes.style,
     tabTextStyle: Text.propTypes.style,
     activeTabTextStyle: Text.propTypes.style,
     tabBadgeContainerStyle: Text.propTypes.style,
@@ -136,6 +140,8 @@ SegmentedControlTab.defaultProps = {
     tabsContainerStyle: {},
     tabStyle: {},
     activeTabStyle: {},
+    firstTabStyle: undefined,
+    lastTabStyle: undefined,
     tabTextStyle: {},
     activeTabTextStyle: {},
     tabBadgeContainerStyle: {},
