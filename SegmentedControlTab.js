@@ -73,8 +73,15 @@ const SegmentedControlTab = ({
     onTabPress,
 }) => {
 
-    const firstTabStyle = [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
-    const lastTabStyle = [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
+    let firstTabStyle = [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
+    let lastTabStyle = [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
+
+    //check if right-to-left language.  switch first/last tab if so
+    if (I18nManager.isRTL) {
+        let temp = firstTabStyle;
+        firstTabStyle = lastTabStyle;
+        lastTabStyle = temp;
+    }
 
     return (
         <View
