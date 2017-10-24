@@ -4,7 +4,8 @@ import {
     ViewPropTypes,
     TouchableOpacity,
     StyleSheet,
-    Text
+    Text,
+    I18nManager
 } from 'react-native'
 import PropTypes from 'prop-types';
 
