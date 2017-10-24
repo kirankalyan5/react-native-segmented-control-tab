@@ -4,7 +4,8 @@ import {
     ViewPropTypes,
     TouchableOpacity,
     StyleSheet,
-    Text
+    Text,
+    I18nManager
 } from 'react-native'
 import PropTypes from 'prop-types';
 
@@ -73,8 +74,15 @@ const SegmentedControlTab = ({
     onTabPress,
 }) => {
 
-    const firstTabStyle = [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
-    const lastTabStyle = [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
+    let firstTabStyle = [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
+    let lastTabStyle = [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
+
+    //check if right-to-left language.  switch first/last tab if so
+    if (I18nManager.isRTL) {
+        let temp = firstTabStyle;
+        firstTabStyle = lastTabStyle;
+        lastTabStyle = temp;
+    }
 
     return (
         <View
@@ -90,8 +98,8 @@ const SegmentedControlTab = ({
                             isTabActive={multiple ? selectedIndices.includes(index) : selectedIndex === index}
                             text={item}
                             onTabPress={(index) => handleTabPress(index, multiple, selectedIndex, onTabPress)}
-                            firstTabStyle={index === 0 ? [{ borderRightWidth: 0 }, firstTabStyle] : {}}
-                            lastTabStyle={index === values.length - 1 ? [{ borderLeftWidth: 0 }, lastTabStyle] : {}}
+                            firstTabStyle={index === 0 ? [firstTabStyle] : {}}
+                            lastTabStyle={index === values.length - 1 ? [lastTabStyle] : {}}
                             tabStyle={[tabStyle, index !== 0 && index !== values.length - 1 ? { paddingLeft: -1 } : {}]}
                             activeTabStyle={activeTabStyle}
                             tabTextStyle={tabTextStyle}
