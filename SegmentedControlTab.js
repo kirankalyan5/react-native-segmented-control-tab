@@ -72,10 +72,10 @@ const SegmentedControlTab = ({
     tabBadgeStyle, activeTabBadgeStyle,
     onTabPress,
 }) => {
-
-    const firstTabStyle = [{ borderRightWidth: 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
-    const lastTabStyle = [{ borderLeftWidth: 0, borderTopRightRadius: borderRadius, borderBottomRightRadius: borderRadius }]
-
+    const isBorderRadius = borderRadius ? {borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius} : {}
+    const firstTabStyle = [{ borderRightWidth: 0, ...isBorderRadius }]
+    const lastTabStyle = [{ borderLeftWidth: 0, ...isBorderRadius }]
+    
     return (
         <View
             style={[styles.tabsContainerStyle, tabsContainerStyle]}
