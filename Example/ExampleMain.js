@@ -55,6 +55,8 @@ class ExampleMain extends Component {
                 <Text style={styles.headerText} >Default segmented control with single selection</Text>
                 <SegmentedControlTab
                     selectedIndex={this.state.selectedIndex}
+                    tabStyle={styles.tabStyle}
+                    activeTabStyle={styles.activeTabStyle}
                     onTabPress={this.handleSingleIndexSelect} />
                 <View style={styles.Seperator} />
                 <Text style={styles.headerText} >Default segmented control with multiple selection</Text>
@@ -76,7 +78,7 @@ class ExampleMain extends Component {
                     onTabPress={this.handleCustomIndexSelect}
                     borderRadius={0}
                     tabsContainerStyle={{ height: 50, backgroundColor: '#F2F2F2' }}
-                    tabStyle={{ backgroundColor: '#F2F2F2', borderWidth: 0 }}
+                    tabStyle={{ backgroundColor: '#F2F2F2', borderWidth: 0, borderColor: 'transparent' }}
                     activeTabStyle={{ backgroundColor: 'white', marginTop: 2 }}
                     tabTextStyle={{ color: '#444444', fontWeight: 'bold' }}
                     activeTabTextStyle={{ color: '#888888' }} />
@@ -126,7 +128,17 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderTopColor: '#888888',
         marginTop: 24
-    }
+    },
+    tabStyle: {
+        borderColor: '#D52C43'
+    },
+    activeTabStyle: {
+        backgroundColor: '#D52C43'
+    },
+    tabTextStyle: {
+        color: '#D52C43'
+    },
+
 })
 
 
