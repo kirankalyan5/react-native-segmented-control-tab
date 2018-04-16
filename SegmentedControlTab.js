@@ -24,7 +24,7 @@ const TabOption = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress, textNumberOfLines
+    onTabPress, textNumberOfLines, accessibilityLabel
 }) => {
     return (
         <TouchableOpacity style={[
@@ -35,13 +35,15 @@ const TabOption = ({
             lastTabStyle]}
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
-            <View style={{ flexDirection: "row" }}>
+            <View style={{ flexDirection: "row" }}
+            accessibilityLabel={accessibilityLabel}>
                 <Text style={[
                     styles.tabTextStyle,
                     tabTextStyle,
                     isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}
                     numberOfLines={textNumberOfLines}
-                    ellipsizeMode="tail">
+                    ellipsizeMode="tail"
+                    accessibilityLabel={accessibilityLabel + "_text_" + text}>
                     {text}
                 </Text>
                 {
@@ -53,7 +55,8 @@ const TabOption = ({
                             <Text style={[
                                 styles.tabBadgeStyle,
                                 tabBadgeStyle,
-                                isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle] : {}]}>
+                                isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle] : {}]}
+                                accessibilityLabel={accessibilityLabel + "_text2_" + text}>
                                 {badge}
                             </Text>
                         </View> : false
@@ -70,7 +73,7 @@ const SegmentedControlTab = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress, textNumberOfLines
+    onTabPress, textNumberOfLines, accessibilityLabel
 }) => {
 
     const firstTabStyle = [{ borderRightWidth: values.length == 2 ? 1 : 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
@@ -79,7 +82,8 @@ const SegmentedControlTab = ({
     return (
         <View
             style={[styles.tabsContainerStyle, tabsContainerStyle]}
-            removeClippedSubviews={false}>
+            removeClippedSubviews={false}
+            accessibilityLabel={accessibilityLabel + "_view"}>
             {
                 values.map((item, index) => {
                     return (
@@ -100,7 +104,8 @@ const SegmentedControlTab = ({
                             tabBadgeContainerStyle={tabBadgeContainerStyle}
                             activeTabBadgeContainerStyle={activeTabBadgeContainerStyle}
                             tabBadgeStyle={tabBadgeStyle}
-                            activeTabBadgeStyle={activeTabBadgeStyle} />
+                            activeTabBadgeStyle={activeTabBadgeStyle}
+                            accessibilityLabel={accessibilityLabel + "_tabOption_" + index}/>
                     );
                 })
             }
