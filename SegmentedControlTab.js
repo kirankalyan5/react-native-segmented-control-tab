@@ -34,7 +34,8 @@ const TabOption = ({
             firstTabStyle,
             lastTabStyle]}
             onPress={() => onTabPress(index)}
-            activeOpacity={1}>
+            activeOpacity={1}
+            accessibilityLabel={accessibilityLabel + "_touchableOpacity"}>
             <View style={{ flexDirection: "row" }}
             accessibilityLabel={accessibilityLabel}>
                 <Text style={[
