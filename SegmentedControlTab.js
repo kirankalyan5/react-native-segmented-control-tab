@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
     View,
     ViewPropTypes,
     TouchableOpacity,
     StyleSheet,
     Text
-} from 'react-native'
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 const handleTabPress = (index, multiple, selectedIndex, onTabPress) => {
@@ -24,7 +24,8 @@ const TabOption = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress, textNumberOfLines
+    onTabPress, textNumberOfLines,
+    allowFontScaling,
 }) => {
     return (
         <TouchableOpacity style={[
@@ -41,6 +42,7 @@ const TabOption = ({
                     tabTextStyle,
                     isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}
                     numberOfLines={textNumberOfLines}
+                    allowFontScaling={allowFontScaling}
                     ellipsizeMode="tail">
                     {text}
                 </Text>
@@ -53,7 +55,8 @@ const TabOption = ({
                             <Text style={[
                                 styles.tabBadgeStyle,
                                 tabBadgeStyle,
-                                isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle] : {}]}>
+                                isTabActive ? [styles.activeTabBadgeStyle, activeTabBadgeStyle] : {}]}
+                                allowFontScaling={allowFontScaling}>
                                 {badge}
                             </Text>
                         </View> : false
@@ -70,7 +73,8 @@ const SegmentedControlTab = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress, textNumberOfLines
+    onTabPress, textNumberOfLines,
+    allowFontScaling,
 }) => {
 
     const firstTabStyle = [{ borderRightWidth: values.length == 2 ? 1 : 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
@@ -100,7 +104,9 @@ const SegmentedControlTab = ({
                             tabBadgeContainerStyle={tabBadgeContainerStyle}
                             activeTabBadgeContainerStyle={activeTabBadgeContainerStyle}
                             tabBadgeStyle={tabBadgeStyle}
-                            activeTabBadgeStyle={activeTabBadgeStyle} />
+                            activeTabBadgeStyle={activeTabBadgeStyle}
+                            allowFontScaling={allowFontScaling}
+                        />
                     );
                 })
             }
@@ -125,8 +131,9 @@ SegmentedControlTab.propTypes = {
     tabBadgeStyle: Text.propTypes.style,
     activeTabBadgeStyle: Text.propTypes.style,
     borderRadius: PropTypes.number,
-    textNumberOfLines: PropTypes.number
-}
+    textNumberOfLines: PropTypes.number,
+    allowFontScaling: PropTypes.bool,
+};
 
 SegmentedControlTab.defaultProps = {
     values: ['One', 'Two', 'Three'],
@@ -145,8 +152,9 @@ SegmentedControlTab.defaultProps = {
     tabBadgeStyle: {},
     activeTabBadgeStyle: {},
     borderRadius: 5,
-    textNumberOfLines: 1
-}
+    textNumberOfLines: 1,
+    allowFontScaling: true,
+};
 
 const styles = StyleSheet.create({
     tabsContainerStyle: {
@@ -190,6 +198,6 @@ const styles = StyleSheet.create({
     activeTabBadgeStyle: {
         color: 'black'
     }
-})
+});
 
 export default SegmentedControlTab

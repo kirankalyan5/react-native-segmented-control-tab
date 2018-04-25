@@ -4,12 +4,11 @@ import {
     Text,
     View
 } from 'react-native';
-
-import SegmentedControlTab from 'react-native-segmented-control-tab'
+import SegmentedControlTab from 'react-native-segmented-control-tab';
 
 class ExampleMain extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             selectedIndex: 0,
             selectedIndices: [0],
