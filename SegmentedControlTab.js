@@ -24,7 +24,8 @@ const TabOption = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress, allowFontScaling,
+    onTabPress, textNumberOfLines,
+    allowFontScaling,
 }) => {
     return (
         <TouchableOpacity style={[
@@ -40,7 +41,7 @@ const TabOption = ({
                     styles.tabTextStyle,
                     tabTextStyle,
                     isTabActive ? [styles.activeTabTextStyle, activeTabTextStyle] : {}]}
-                    numberOfLines={1}
+                    numberOfLines={textNumberOfLines}
                     allowFontScaling={allowFontScaling}
                     ellipsizeMode="tail">
                     {text}
@@ -72,7 +73,8 @@ const SegmentedControlTab = ({
     tabTextStyle, activeTabTextStyle,
     tabBadgeContainerStyle, activeTabBadgeContainerStyle,
     tabBadgeStyle, activeTabBadgeStyle,
-    onTabPress, allowFontScaling,
+    onTabPress, textNumberOfLines,
+    allowFontScaling,
 }) => {
 
     const firstTabStyle = [{ borderRightWidth: values.length == 2 ? 1 : 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
@@ -91,6 +93,7 @@ const SegmentedControlTab = ({
                             badge={badges && badges[index] ? badges[index] : false}
                             isTabActive={multiple ? selectedIndices.includes(index) : selectedIndex === index}
                             text={item}
+                            textNumberOfLines={textNumberOfLines}
                             onTabPress={(index) => handleTabPress(index, multiple, selectedIndex, onTabPress)}
                             firstTabStyle={index === 0 ? [{ borderRightWidth: 0 }, firstTabStyle] : {}}
                             lastTabStyle={index === values.length - 1 ? [{ borderLeftWidth: 0 }, lastTabStyle] : {}}
@@ -128,6 +131,7 @@ SegmentedControlTab.propTypes = {
     tabBadgeStyle: Text.propTypes.style,
     activeTabBadgeStyle: Text.propTypes.style,
     borderRadius: PropTypes.number,
+    textNumberOfLines: PropTypes.number,
     allowFontScaling: PropTypes.bool,
 };
 
@@ -148,6 +152,7 @@ SegmentedControlTab.defaultProps = {
     tabBadgeStyle: {},
     activeTabBadgeStyle: {},
     borderRadius: 5,
+    textNumberOfLines: 1,
     allowFontScaling: true,
 };
 
