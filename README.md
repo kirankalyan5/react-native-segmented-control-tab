@@ -10,11 +10,15 @@
 A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android. 💡
 
 ## ScreenShots
-![screen1](http://s13.postimg.org/hd8b53rd3/screen1.png)
 
-![screen2](http://s11.postimg.org/onlfshx2r/screen2.png)
+### Android
 
-[![Screen3](https://s2.postimg.org/efbha5qah/Screen_Shot_2017-07-26_at_8.41.12_AM.png)](https://postimg.org/image/dpsoxspqt/)
+![Demo](https://github.com/kirankalyan5/react-native-segmented-control-tab/blob/master/Example/screenshots/screenshot_android.png)
+
+### iOS
+
+![Demo](https://github.com/kirankalyan5/react-native-segmented-control-tab/blob/master/Example/screenshots/screenshot_ios.png)
+
 ## Install
 
 ```shell
