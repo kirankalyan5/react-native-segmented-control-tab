@@ -37,7 +37,7 @@ const TabOption = ({
             firstTabStyle,
             lastTabStyle]}
             accessible={accessible}
-            { ...(accessibilityLabel && accessibilityLabel.trim() !== '' && {accessibilityLabel: accessibilityLabel})}
+            accessibilityLabel={accessibilityLabel}
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
             <View style={{ flexDirection: "row" }}>
@@ -85,7 +85,6 @@ const SegmentedControlTab = ({
     allowFontScaling,
     accessible,
     accessibilityLabel,
-    setValuesAsAccessibilityLabel
 }) => {
 
     const firstTabStyle = [{ borderRightWidth: values.length == 2 ? 1 : 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
@@ -97,6 +96,7 @@ const SegmentedControlTab = ({
             removeClippedSubviews={false}>
             {
                 values.map((item, index) => {
+                    const accessibilityText = getAccessibilityLabelByIndex(accessibilityLabel, index)
                     return (
                         <TabOption
                             key={index}
@@ -118,7 +118,7 @@ const SegmentedControlTab = ({
                             activeTabBadgeStyle={activeTabBadgeStyle}
                             allowFontScaling={allowFontScaling}
                             accessible={accessible}
-                            accessibilityLabel={setValuesAsAccessibilityLabel ? item : getAccessibilityLabelByIndex(accessibilityLabel, index) }
+                            accessibilityLabel={accessibilityText ? accessibilityText : item }
                         />
                     );
                 })
@@ -148,14 +148,12 @@ SegmentedControlTab.propTypes = {
     allowFontScaling: PropTypes.bool,
     accessible: PropTypes.bool,
     accessibilityLabel: PropTypes.array,
-    setValuesAsAccessibilityLabel: PropTypes.bool,
 };
 
 SegmentedControlTab.defaultProps = {
     values: ['One', 'Two', 'Three'],
     accessible: true,
     accessibilityLabel: ['', '', ''],
-    setValuesAsAccessibilityLabel: true,
     badges: ['', '', ''],
     multiple: false,
     selectedIndex: 0,

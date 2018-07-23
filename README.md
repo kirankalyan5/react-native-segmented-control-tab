@@ -83,8 +83,8 @@ activeTabBadgeStyle | external style can be passed to override the default style
 onTabPress | call-back function when a tab is selected | () => {} | func
 allowFontScaling | whether the segment & badge text should allow font scaling (default matches React Native default) | true | bool
 accessible | enables accessibility for each tab | true | bool
-accessibilityLabel | Reads out the text on each tab press when voice over is enabled and setValuesAsAccessibilityLabel prop is set to false | ['Label 1', 'Label 2', 'Label 3'] | array
-setValuesAsAccessibilityLabel | uses the text passed in as values in props in place of accessibilityLabel. To have customized accessibility label mark this prop as false and set the values in accessibilityLabel prop | true | bool
+accessibilityLabel | Reads out the given text on each tab press when voice over is enabled. If not set, uses the text passed in as values in props as a fallback | ['Label 1', 'Label 2', 'Label 3'] | array
+
 
 ## Custom styling
   ```javascript
