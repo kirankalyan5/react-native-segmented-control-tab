@@ -26,6 +26,8 @@ const TabOption = ({
     tabBadgeStyle, activeTabBadgeStyle,
     onTabPress, textNumberOfLines,
     allowFontScaling,
+    accessible,
+    accessibilityLabel,
 }) => {
     return (
         <TouchableOpacity style={[
@@ -34,6 +36,8 @@ const TabOption = ({
             isTabActive ? [styles.activeTabStyle, activeTabStyle] : {},
             firstTabStyle,
             lastTabStyle]}
+            accessible={accessible}
+            { ...(accessibilityLabel && accessibilityLabel.trim() !== '' && {accessibilityLabel: accessibilityLabel})}
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
             <View style={{ flexDirection: "row" }}>
@@ -66,6 +70,10 @@ const TabOption = ({
     );
 }
 
+const getAccessibilityLabelByIndex = (accessibilityLabels, index) => {
+    return accessibilityLabels && accessibilityLabels.length > 0 && accessibilityLabels[index] ?  accessibilityLabels[index] : undefined
+}
+
 const SegmentedControlTab = ({
     multiple, selectedIndex, selectedIndices, values,
     badges, borderRadius, tabsContainerStyle,
@@ -75,6 +83,9 @@ const SegmentedControlTab = ({
     tabBadgeStyle, activeTabBadgeStyle,
     onTabPress, textNumberOfLines,
     allowFontScaling,
+    accessible,
+    accessibilityLabel,
+    setValuesAsAccessibilityLabel
 }) => {
 
     const firstTabStyle = [{ borderRightWidth: values.length == 2 ? 1 : 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
@@ -106,6 +117,8 @@ const SegmentedControlTab = ({
                             tabBadgeStyle={tabBadgeStyle}
                             activeTabBadgeStyle={activeTabBadgeStyle}
                             allowFontScaling={allowFontScaling}
+                            accessible={accessible}
+                            accessibilityLabel={setValuesAsAccessibilityLabel ? item : getAccessibilityLabelByIndex(accessibilityLabel, index) }
                         />
                     );
                 })
@@ -133,15 +146,21 @@ SegmentedControlTab.propTypes = {
     borderRadius: PropTypes.number,
     textNumberOfLines: PropTypes.number,
     allowFontScaling: PropTypes.bool,
+    accessible: PropTypes.bool,
+    accessibilityLabel: PropTypes.array,
+    setValuesAsAccessibilityLabel: PropTypes.bool,
 };
 
 SegmentedControlTab.defaultProps = {
     values: ['One', 'Two', 'Three'],
+    accessible: true,
+    accessibilityLabel: ['', '', ''],
+    setValuesAsAccessibilityLabel: true,
     badges: ['', '', ''],
     multiple: false,
     selectedIndex: 0,
     selectedIndices: [0],
-    onTabPress() { },
+    onTabPress: () => { },
     tabsContainerStyle: {},
     tabStyle: {},
     activeTabStyle: {},
