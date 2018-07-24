@@ -38,6 +38,8 @@ const TabOption = ({
             lastTabStyle]}
             accessible={accessible}
             accessibilityLabel={accessibilityLabel}
+            accessibilityTraits={isTabActive ? "selected" : "button"}
+            accessibilityComponentType={"button"}
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
             <View style={{ flexDirection: "row" }}>
@@ -84,7 +86,7 @@ const SegmentedControlTab = ({
     onTabPress, textNumberOfLines,
     allowFontScaling,
     accessible,
-    accessibilityLabel,
+    accessibilityLabels,
 }) => {
 
     const firstTabStyle = [{ borderRightWidth: values.length == 2 ? 1 : 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
@@ -96,7 +98,7 @@ const SegmentedControlTab = ({
             removeClippedSubviews={false}>
             {
                 values.map((item, index) => {
-                    const accessibilityText = getAccessibilityLabelByIndex(accessibilityLabel, index)
+                    const accessibilityText = getAccessibilityLabelByIndex(accessibilityLabels, index)
                     return (
                         <TabOption
                             key={index}
@@ -147,13 +149,13 @@ SegmentedControlTab.propTypes = {
     textNumberOfLines: PropTypes.number,
     allowFontScaling: PropTypes.bool,
     accessible: PropTypes.bool,
-    accessibilityLabel: PropTypes.array,
+    accessibilityLabels: PropTypes.array,
 };
 
 SegmentedControlTab.defaultProps = {
     values: ['One', 'Two', 'Three'],
     accessible: true,
-    accessibilityLabel: ['', '', ''],
+    accessibilityLabels: [],
     badges: ['', '', ''],
     multiple: false,
     selectedIndex: 0,
