@@ -82,6 +82,9 @@ tabBadgeStyle | external style can be passed to override the default style of th
 activeTabBadgeStyle | external style can be passed to override the default style of the active badge text | base styles added in SegmentedControlTab.js  | object(styles)
 onTabPress | call-back function when a tab is selected | () => {} | func
 allowFontScaling | whether the segment & badge text should allow font scaling (default matches React Native default) | true | bool
+accessible | enables accessibility for each tab | true | bool
+accessibilityLabels | Reads out the given text on each tab press when voice over is enabled. If not set, uses the text passed in as values in props as a fallback | ['Label 1', 'Label 2', 'Label 3'] | array
+
 
 ## Custom styling
   ```javascript

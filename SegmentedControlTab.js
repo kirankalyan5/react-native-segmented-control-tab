@@ -26,6 +26,8 @@ const TabOption = ({
     tabBadgeStyle, activeTabBadgeStyle,
     onTabPress, textNumberOfLines,
     allowFontScaling,
+    accessible,
+    accessibilityLabel,
 }) => {
     return (
         <TouchableOpacity style={[
@@ -34,6 +36,10 @@ const TabOption = ({
             isTabActive ? [styles.activeTabStyle, activeTabStyle] : {},
             firstTabStyle,
             lastTabStyle]}
+            accessible={accessible}
+            accessibilityLabel={accessibilityLabel}
+            accessibilityTraits={isTabActive ? "selected" : "button"}
+            accessibilityComponentType={"button"}
             onPress={() => onTabPress(index)}
             activeOpacity={1}>
             <View style={{ flexDirection: "row" }}>
@@ -66,6 +72,10 @@ const TabOption = ({
     );
 }
 
+const getAccessibilityLabelByIndex = (accessibilityLabels, index) => {
+    return accessibilityLabels && accessibilityLabels.length > 0 && accessibilityLabels[index] ?  accessibilityLabels[index] : undefined
+}
+
 const SegmentedControlTab = ({
     multiple, selectedIndex, selectedIndices, values,
     badges, borderRadius, tabsContainerStyle,
@@ -75,6 +85,8 @@ const SegmentedControlTab = ({
     tabBadgeStyle, activeTabBadgeStyle,
     onTabPress, textNumberOfLines,
     allowFontScaling,
+    accessible,
+    accessibilityLabels,
 }) => {
 
     const firstTabStyle = [{ borderRightWidth: values.length == 2 ? 1 : 0, borderTopLeftRadius: borderRadius, borderBottomLeftRadius: borderRadius }]
@@ -86,6 +98,7 @@ const SegmentedControlTab = ({
             removeClippedSubviews={false}>
             {
                 values.map((item, index) => {
+                    const accessibilityText = getAccessibilityLabelByIndex(accessibilityLabels, index)
                     return (
                         <TabOption
                             key={index}
@@ -106,6 +119,8 @@ const SegmentedControlTab = ({
                             tabBadgeStyle={tabBadgeStyle}
                             activeTabBadgeStyle={activeTabBadgeStyle}
                             allowFontScaling={allowFontScaling}
+                            accessible={accessible}
+                            accessibilityLabel={accessibilityText ? accessibilityText : item }
                         />
                     );
                 })
@@ -133,15 +148,19 @@ SegmentedControlTab.propTypes = {
     borderRadius: PropTypes.number,
     textNumberOfLines: PropTypes.number,
     allowFontScaling: PropTypes.bool,
+    accessible: PropTypes.bool,
+    accessibilityLabels: PropTypes.array,
 };
 
 SegmentedControlTab.defaultProps = {
     values: ['One', 'Two', 'Three'],
+    accessible: true,
+    accessibilityLabels: [],
     badges: ['', '', ''],
     multiple: false,
     selectedIndex: 0,
     selectedIndices: [0],
-    onTabPress() { },
+    onTabPress: () => { },
     tabsContainerStyle: {},
     tabStyle: {},
     activeTabStyle: {},
