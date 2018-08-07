@@ -149,6 +149,7 @@ SegmentedControlTab.propTypes = {
     selectedIndex: PropTypes.number,
     selectedIndices: PropTypes.arrayOf(PropTypes.number),
     tabsContainerStyle: ViewPropTypes.style,
+    tabsContainerDisableStyle: ViewPropTypes.style,
     tabStyle: ViewPropTypes.style,
     activeTabStyle: ViewPropTypes.style,
     tabTextStyle: Text.propTypes.style,

@@ -68,9 +68,11 @@ class ConsumerComponent extends Component {
 values | titles of tabs  | `['One', 'Two', 'Three']` | array
 selectedIndex | index of tab item to be selected initially| [0] | number
 selectedIndices |Array of indices of tab items to be selected initially - when multiple prop is true else it will take selectedIndex| [0] | arrayOf(PropTypes.number)
+enable | Boolean to enable or disable the component | true | bool
 multiple | Boolean which enables the multiple selection option | false | bool
 borderRadius | borderRadius of whole tab | 5 | number
 tabsContainerStyle | external styles can be passed to override the default styles of the segmentedControl wrapper| base styles added in SegmentedControlTab.js  | object(styles)
+tabsContainerDisableStyle | Custom style that can be passed when `enable` is set to false | default style `opacity: 0.6` | object(styles)
 tabStyle | external styles can be passed to override the default styles of the tabs| base styles added in SegmentedControlTab.js  | object(styles)
 tabTextStyle | external styles can be passed to override the default styles of the tab title| base styles added in SegmentedControlTab.js  | object(styles)
 activeTabStyle | external styles can be passed to override the default styles of the active tab| base styles added in SegmentedControlTab.js  | object(styles)
@@ -84,6 +86,7 @@ onTabPress | call-back function when a tab is selected | () => {} | func
 allowFontScaling | whether the segment & badge text should allow font scaling (default matches React Native default) | true | bool
 accessible | enables accessibility for each tab | true | bool
 accessibilityLabels | Reads out the given text on each tab press when voice over is enabled. If not set, uses the text passed in as values in props as a fallback | ['Label 1', 'Label 2', 'Label 3'] | array
+activeTabOpacity | Opacity value to customize tab press | 1 | number
 
 
 ## Custom styling
