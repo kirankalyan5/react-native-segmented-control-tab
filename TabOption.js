@@ -1,6 +1,12 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import {View, TouchableOpacity, StyleSheet, Text} from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+   StyleSheet,
+   Text,
+   ViewPropTypes
+  } from 'react-native';
 
 const styles = StyleSheet.create({
   tabStyle: {
@@ -46,18 +52,18 @@ export default class TabOption extends PureComponent {
   static propTypes = {
     isTabActive: PropTypes.bool,
     index: PropTypes.number,
-    badge: PropTypes.string,
+    badge: PropTypes.any,
     text: PropTypes.string.isRequired,
-    firstTabStyle: PropTypes.object,
-    lastTabStyle: PropTypes.object,
-    tabStyle: PropTypes.object,
-    activeTabStyle: PropTypes.object,
-    tabTextStyle: PropTypes.object,
-    activeTabTextStyle: PropTypes.object,
-    tabBadgeContainerStyle: PropTypes.object,
-    activeTabBadgeContainerStyle: PropTypes.object,
-    tabBadgeStyle: PropTypes.object,
-    activeTabBadgeStyle: PropTypes.object,
+    firstTabStyle: ViewPropTypes.style,
+    lastTabStyle: ViewPropTypes.style,
+    tabStyle: ViewPropTypes.style,
+    activeTabStyle: ViewPropTypes.style,
+    tabTextStyle: Text.propTypes.style,
+    activeTabTextStyle: Text.propTypes.style,
+    tabBadgeContainerStyle: Text.propTypes.style,
+    activeTabBadgeContainerStyle: Text.propTypes.style,
+    tabBadgeStyle: Text.propTypes.style,
+    activeTabBadgeStyle: Text.propTypes.style,
     onTabPress: PropTypes.func,
     textNumberOfLines: PropTypes.number,
     allowFontScaling: PropTypes.bool,
@@ -144,7 +150,7 @@ export default class TabOption extends PureComponent {
             ellipsizeMode="tail">
             {text}
           </Text>
-          {badge ? (
+          {Boolean(badge) && (
             <View
               style={[
                 styles.tabBadgeContainerStyle,
@@ -168,8 +174,6 @@ export default class TabOption extends PureComponent {
                 {badge}
               </Text>
             </View>
-          ) : (
-            false
           )}
         </View>
       </TouchableOpacity>
