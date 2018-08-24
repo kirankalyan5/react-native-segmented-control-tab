@@ -1,9 +1,9 @@
 import { StyleProp, ViewStyle, TextStyle } from "react-native";
 export interface SegmentedControlTabProperties extends React.Props<ReactNativeSegmentedControlTab> {
     // Default ['One', 'Two', 'Three'] ; titles of tabs Default 
-    values?: Array<string>
+    values?: Array<any>
     // Default [0] ;index of tab item to be selected initially 
-    selectedIndex?: Array<number>
+    selectedIndex?: number
     // Default  [0];Array of indices of tab items to be selected initially - when multiple prop is true else it will take selectedIndex
     selectedIndices?: Array<number>
     // Default  true; Boolean to enable or disable the component
@@ -21,21 +21,21 @@ export interface SegmentedControlTabProperties extends React.Props<ReactNativeSe
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the tab title
     tabTextStyle?: StyleProp<TextStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the active tab
-    activeTabStyle?: StyleProp<ViewStyle>
+    activeTabStyle?: StyleProp<TextStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the active tab text
     activeTabTextStyle?: StyleProp<TextStyle>
     // Default  [1, 2, 3];badges values to display
-    badges?: Array<number>
+    badges?: Array<any>
     // Default  base styles added in SegmentedControlTab.js;external style can be passed to override the default style of the badge container
-    tabBadgeContainerStyle?: StyleProp<ViewStyle>
+    tabBadgeContainerStyle?: StyleProp<TextStyle>
     // Default  base styles added in SegmentedControlTab.js;external style can be passed to override the default style of the active badge container
-    activeTabBadgeContainerStyle?: StyleProp<ViewStyle>
+    activeTabBadgeContainerStyle?: StyleProp<TextStyle>
     // Default  base styles added in SegmentedControlTab.js;external style can be passed to override the default style of the badge text
-    tabBadgeStyle?: StyleProp<ViewStyle>
+    tabBadgeStyle?: StyleProp<TextStyle>
     // Default  base styles added in SegmentedControlTab.js;external style can be passed to override the default style of the active badge text
-    activeTabBadgeStyle?: StyleProp<ViewStyle>
+    activeTabBadgeStyle?: StyleProp<TextStyle>
     // Default  call-back function when a tab is selected
-    onTabPress?: (index: any) => void
+    onTabPress?: (index: number) => void
     // Default  true;whether the segment & badge text should allow font scaling (default matches React Native default)
     allowFontScaling?: boolean
     // Default  true;enables accessibility for each tab
