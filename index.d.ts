@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle, TextStyle } from "react-native";
 export interface SegmentedControlTabProperties extends React.Props<ReactNativeSegmentedControlTab> {
     // Default ['One', 'Two', 'Three'] ; titles of tabs Default 
     values?: Array<string>
@@ -19,11 +19,11 @@ export interface SegmentedControlTabProperties extends React.Props<ReactNativeSe
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the tabs
     tabStyle?: StyleProp<ViewStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the tab title
-    tabTextStyle?: StyleProp<ViewStyle>
+    tabTextStyle?: StyleProp<TextStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the active tab
     activeTabStyle?: StyleProp<ViewStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the active tab text
-    activeTabTextStyle?: StyleProp<ViewStyle>
+    activeTabTextStyle?: StyleProp<TextStyle>
     // Default  [1, 2, 3];badges values to display
     badges?: Array<number>
     // Default  base styles added in SegmentedControlTab.js;external style can be passed to override the default style of the badge container
