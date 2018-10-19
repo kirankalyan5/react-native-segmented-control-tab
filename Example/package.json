@@ -1,24 +1,17 @@
 {
-	"name": "Example",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"react": "16.0.0-alpha.12",
-		"react-native": "0.45.1"
-	},
-	"devDependencies": {
-		"babel-jest": "20.0.3",
-		"babel-preset-react-native": "2.0.0",
-		"jest": "20.0.4",
-		"react-test-renderer": "16.0.0-alpha.12",
-		"react-native-segmented-control-tab": "file:../"
-
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "empty-project-template",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject"
+  },
+  "dependencies": {
+    "expo": "^30.0.1",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native-segmented-control-tab": "^3.3.1"
+  }
 }
