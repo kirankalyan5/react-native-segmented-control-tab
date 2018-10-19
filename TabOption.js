@@ -1,12 +1,42 @@
-import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
+/* @flow */
+
+import React, { PureComponent } from 'react'
 import {
   View,
   TouchableOpacity,
-   StyleSheet,
-   Text,
-   ViewPropTypes
-  } from 'react-native';
+  StyleSheet,
+  Text,
+} from 'react-native'
+
+
+import type {
+  ViewStyleProp,
+  TextStyleProp,
+} from 'react-native/Libraries/StyleSheet/StyleSheet'
+
+type Props = {
+  isTabActive?: boolean,
+  index?: number,
+  badge?: any,
+  text: string,
+  firstTabStyle?: ViewStyleProp,
+  lastTabStyle?: ViewStyleProp,
+  tabStyle?: ViewStyleProp,
+  activeTabStyle?: ViewStyleProp,
+  tabTextStyle?: TextStyleProp,
+  activeTabTextStyle?: TextStyleProp,
+  tabBadgeContainerStyle?: TextStyleProp,
+  activeTabBadgeContainerStyle?: TextStyleProp,
+  tabBadgeStyle?: TextStyleProp,
+  activeTabBadgeStyle?: TextStyleProp,
+  onTabPress: Function,
+  textNumberOfLines?: number,
+  allowFontScaling?: boolean,
+  accessible?: boolean,
+  activeTabOpacity?: number,
+  accessibilityLabel?: string,
+  enabled?: boolean,
+}
 
 const styles = StyleSheet.create({
   tabStyle: {
@@ -46,33 +76,9 @@ const styles = StyleSheet.create({
   activeTabBadgeStyle: {
     color: 'black',
   },
-});
+})
 
-export default class TabOption extends PureComponent {
-  static propTypes = {
-    isTabActive: PropTypes.bool,
-    index: PropTypes.number,
-    badge: PropTypes.any,
-    text: PropTypes.string.isRequired,
-    firstTabStyle: ViewPropTypes.style,
-    lastTabStyle: ViewPropTypes.style,
-    tabStyle: ViewPropTypes.style,
-    activeTabStyle: ViewPropTypes.style,
-    tabTextStyle: Text.propTypes.style,
-    activeTabTextStyle: Text.propTypes.style,
-    tabBadgeContainerStyle: Text.propTypes.style,
-    activeTabBadgeContainerStyle: Text.propTypes.style,
-    tabBadgeStyle: Text.propTypes.style,
-    activeTabBadgeStyle: Text.propTypes.style,
-    onTabPress: PropTypes.func,
-    textNumberOfLines: PropTypes.number,
-    allowFontScaling: PropTypes.bool,
-    accessible: PropTypes.any,
-    activeTabOpacity: PropTypes.number,
-    accessibilityLabel: PropTypes.string,
-    enabled: PropTypes.bool,
-  };
-
+export default class TabOption extends PureComponent<Props> {
   static defaultProps = {
     isTabActive: false,
     index: 0,
@@ -87,10 +93,9 @@ export default class TabOption extends PureComponent {
     activeTabBadgeContainerStyle: {},
     tabBadgeStyle: {},
     activeTabBadgeStyle: {},
-    onTabPress() {},
     textNumberOfLines: 1,
     allowFontScaling: false,
-    accessible: {},
+    accessible: true,
     activeTabOpacity: 1,
     accessibilityLabel: '',
     enabled: false,
@@ -119,7 +124,7 @@ export default class TabOption extends PureComponent {
       activeTabOpacity,
       accessibilityLabel,
       enabled,
-    } = this.props;
+    } = this.props
     return (
       <TouchableOpacity
         style={[
@@ -135,8 +140,9 @@ export default class TabOption extends PureComponent {
         accessibilityComponentType="button"
         onPress={() => onTabPress(index)}
         disabled={!enabled}
-        activeOpacity={activeTabOpacity}>
-        <View style={{flexDirection: 'row'}}>
+        activeOpacity={activeTabOpacity}
+      >
+        <View style={{ flexDirection: 'row' }}>
           <Text
             style={[
               styles.tabTextStyle,
@@ -147,7 +153,8 @@ export default class TabOption extends PureComponent {
             ]}
             numberOfLines={textNumberOfLines}
             allowFontScaling={allowFontScaling}
-            ellipsizeMode="tail">
+            ellipsizeMode="tail"
+          >
             {text}
           </Text>
           {Boolean(badge) && (
@@ -157,11 +164,12 @@ export default class TabOption extends PureComponent {
                 tabBadgeContainerStyle,
                 isTabActive
                   ? [
-                      styles.activeTabBadgeContainerStyle,
-                      activeTabBadgeContainerStyle,
-                    ]
+                    styles.activeTabBadgeContainerStyle,
+                    activeTabBadgeContainerStyle,
+                  ]
                   : {},
-              ]}>
+              ]}
+            >
               <Text
                 style={[
                   styles.tabBadgeStyle,
@@ -170,13 +178,14 @@ export default class TabOption extends PureComponent {
                     ? [styles.activeTabBadgeStyle, activeTabBadgeStyle]
                     : {},
                 ]}
-                allowFontScaling={allowFontScaling}>
+                allowFontScaling={allowFontScaling}
+              >
                 {badge}
               </Text>
             </View>
           )}
         </View>
       </TouchableOpacity>
-    );
+    )
   }
 }

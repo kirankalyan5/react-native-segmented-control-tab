@@ -1,7 +1,41 @@
-import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
-import {View, ViewPropTypes, StyleSheet, Text} from 'react-native';
-import TabOption from './TabOption';
+/* @flow */
+import React, { PureComponent } from 'react'
+import {
+  View, StyleSheet,
+} from 'react-native'
+
+import type {
+  ViewStyleProp,
+  TextStyleProp,
+} from 'react-native/Libraries/StyleSheet/StyleSheet'
+
+import TabOption from './TabOption'
+
+type Props = {
+  tabStyle: ViewStyleProp,
+  activeTabStyle: ViewStyleProp,
+  tabTextStyle: TextStyleProp,
+  activeTabTextStyle: TextStyleProp,
+  tabBadgeContainerStyle: TextStyleProp,
+  activeTabBadgeContainerStyle: TextStyleProp,
+  tabBadgeStyle: TextStyleProp,
+  activeTabBadgeStyle: TextStyleProp,
+  onTabPress: Function,
+  textNumberOfLines: number,
+  allowFontScaling: boolean,
+  accessible: boolean,
+  activeTabOpacity: number,
+  enabled: boolean,
+  values: string[],
+  badges: string[],
+  multiple: boolean,
+  selectedIndex: number,
+  selectedIndices: number[],
+  tabsContainerStyle: ViewStyleProp,
+  tabsContainerDisableStyle: ViewStyleProp,
+  borderRadius: number,
+  accessibilityLabels: string[],
+}
 
 const styles = StyleSheet.create({
   tabsContainerStyle: {
@@ -17,47 +51,32 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: 'white',
   },
-});
-const handleTabPress = (index, multiple, selectedIndex, onTabPress) => {
+})
+const handleTabPress = (
+  index: number,
+  multiple: boolean,
+  selectedIndex: number,
+  onTabPress: Function,
+) => {
   if (multiple) {
-    onTabPress(index);
+    onTabPress(index)
   } else if (selectedIndex !== index) {
-    onTabPress(index);
+    onTabPress(index)
   }
-};
+}
 
-const getAccessibilityLabelByIndex = (accessibilityLabels, index) =>
-  accessibilityLabels &&
-  accessibilityLabels.length > 0 &&
-  accessibilityLabels[index]
-    ? accessibilityLabels[index]
-    : undefined;
+const getAccessibilityLabelByIndex = (
+  accessibilityLabels: string[],
+  index: number,
+) => (accessibilityLabels
+  && accessibilityLabels.length > 0
+  && accessibilityLabels[index]
+  ? accessibilityLabels[index]
+  : undefined)
 
-export default class SegmentedControlTab extends PureComponent {
-  static propTypes = {
-    values: PropTypes.array,
-    badges: PropTypes.array,
-    multiple: PropTypes.bool,
-    onTabPress: PropTypes.func,
-    selectedIndex: PropTypes.number,
-    selectedIndices: PropTypes.arrayOf(PropTypes.number),
-    tabsContainerStyle: ViewPropTypes.style,
-    tabsContainerDisableStyle: ViewPropTypes.style,
-    tabStyle: ViewPropTypes.style,
-    activeTabStyle: ViewPropTypes.style,
-    tabTextStyle: Text.propTypes.style,
-    activeTabTextStyle: Text.propTypes.style,
-    tabBadgeContainerStyle: Text.propTypes.style,
-    activeTabBadgeContainerStyle: Text.propTypes.style,
-    tabBadgeStyle: Text.propTypes.style,
-    activeTabBadgeStyle: Text.propTypes.style,
-    borderRadius: PropTypes.number,
-    textNumberOfLines: PropTypes.number,
-    allowFontScaling: PropTypes.bool,
-    accessible: PropTypes.bool,
-    accessibilityLabels: PropTypes.array,
-    activeTabOpacity: PropTypes.number,
-    enabled: PropTypes.bool,
+export default class SegmentedControlTab extends PureComponent<Props> {
+  static defaultProps = {
+
   };
 
   static defaultProps = {
@@ -70,7 +89,7 @@ export default class SegmentedControlTab extends PureComponent {
     selectedIndices: [0],
     onTabPress: () => {},
     tabsContainerStyle: {},
-    tabsContainerDisableStyle: {opacity: 0.6},
+    tabsContainerDisableStyle: { opacity: 0.6 },
     tabStyle: {},
     activeTabStyle: {},
     tabTextStyle: {},
@@ -85,6 +104,7 @@ export default class SegmentedControlTab extends PureComponent {
     activeTabOpacity: 1,
     enabled: true,
   };
+
 
   render() {
     const {
@@ -111,36 +131,36 @@ export default class SegmentedControlTab extends PureComponent {
       accessibilityLabels,
       activeTabOpacity,
       enabled,
-    } = this.props;
+    } = this.props
     const firstTabStyle = [
       {
-        borderRightWidth: values.length === 2 ? 1 : 0,
+        borderRightWidth: values && values.length === 2 ? 1 : 0,
         borderTopLeftRadius: borderRadius,
         borderBottomLeftRadius: borderRadius,
       },
-    ];
+    ]
     const lastTabStyle = [
       {
         borderLeftWidth: 0,
         borderTopRightRadius: borderRadius,
         borderBottomRightRadius: borderRadius,
       },
-    ];
+    ]
 
-    const tabsContainerStyles = [styles.tabsContainerStyle, tabsContainerStyle];
+    const tabsContainerStyles = [styles.tabsContainerStyle, tabsContainerStyle]
     if (!enabled) {
-      tabsContainerStyles.push(tabsContainerDisableStyle);
+      tabsContainerStyles.push(tabsContainerDisableStyle)
     }
     return (
       <View style={tabsContainerStyles} removeClippedSubviews={false}>
-        {values.map((item, index) => {
+        {values && values.map((item, index) => {
           const accessibilityText = getAccessibilityLabelByIndex(
             accessibilityLabels,
             index,
-          );
+          )
           return (
             <TabOption
-              key={`${index}${item}`}
+              key={item}
               index={index}
               badge={badges && badges[index] ? badges[index] : false}
               isTabActive={
@@ -150,21 +170,20 @@ export default class SegmentedControlTab extends PureComponent {
               }
               text={item}
               textNumberOfLines={textNumberOfLines}
-              onTabPress={indexs =>
-                handleTabPress(indexs, multiple, selectedIndex, onTabPress)
+              onTabPress={indexs => handleTabPress(indexs, multiple, selectedIndex, onTabPress)
               }
               firstTabStyle={
-                index === 0 ? [{borderRightWidth: 0}, firstTabStyle] : {}
+                index === 0 ? [{ borderRightWidth: 0 }, firstTabStyle] : {}
               }
               lastTabStyle={
                 index === values.length - 1
-                  ? [{borderLeftWidth: 0}, lastTabStyle]
+                  ? [{ borderLeftWidth: 0 }, lastTabStyle]
                   : {}
               }
               tabStyle={[
                 tabStyle,
                 index !== 0 && index !== values.length - 1
-                  ? {marginLeft: -1}
+                  ? { marginLeft: -1 }
                   : {},
               ]}
               activeTabStyle={activeTabStyle}
@@ -180,9 +199,9 @@ export default class SegmentedControlTab extends PureComponent {
               accessibilityLabel={accessibilityText || item}
               enabled={enabled}
             />
-          );
+          )
         })}
       </View>
-    );
+    )
   }
 }

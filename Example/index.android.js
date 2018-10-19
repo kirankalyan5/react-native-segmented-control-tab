@@ -4,32 +4,14 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React from 'react'
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+} from 'react-native'
 
 import ExampleMain from './ExampleMain'
 
-class Example extends Component {
-  render() {
-    return (
-        <ExampleMain />
-    );
-  }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    padding: 10
-  }
-});
+const Example = () => <ExampleMain />
 
-AppRegistry.registerComponent('Example', () => Example);
+AppRegistry.registerComponent('Example', () => Example)
