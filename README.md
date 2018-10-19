@@ -13,11 +13,11 @@ A react native component with the same concept of react native's SegmantedContro
 
 ### Android
 
-![Demo](https://github.com/kirankalyan5/react-native-segmented-control-tab/blob/master/example/screenshots/screenshot_android.png)
+![Demo](https://github.com/kirankalyan5/react-native-segmented-control-tab/blob/master/Sample/screenshots/screenshot_android.png)
 
 ### iOS
 
-![Demo](https://github.com/kirankalyan5/react-native-segmented-control-tab/blob/master/example/screenshots/screenshot_ios.png)
+![Demo](https://github.com/kirankalyan5/react-native-segmented-control-tab/blob/master/Sample/screenshots/screenshot_ios.png)
 
 ## Install
 
