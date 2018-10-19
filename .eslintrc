@@ -1,89 +1,200 @@
 {
-  "root": true,
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaFeatures": {
-        "jsx": true,
-        "modules": true,
-        "experimentalObjectRestSpread": true
-    }
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
-  "globals": {
-      "jest": false,
-      "describe": false,
-      "it": false,
-      "afterEach": false,
-      "beforeEach": false,
-      "expect": false,
-      "spyOn": false
-  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
   "plugins": [
     "react",
-    "react-native"
+    "flowtype",
+    "jsx-a11y",
+    "import"
   ],
-  "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-  ],
-  // details: https://github.com/yannickcr/eslint-plugin-react
   "rules": {
-    "semi": ['error', "never"],
-    "quotes": ['error', "single"],
-    "no-unused-vars": 'error',
-    "no-irregular-whitespace": ['error', { "skipComments": true }],
-    "no-console": ['error', { "allow": ["log", "warn", 'error'] }],
-    "no-mixed-spaces-and-tabs": ['error', "smart-tabs"],
-    "react/display-name": ['error', { "ignoreTranspilerName": false }],
-    "react/forbid-prop-types": 'error',
-    "react/jsx-boolean-value": 'error',
-    "react/jsx-closing-bracket-location": 'off',
-    "react/jsx-curly-spacing": 'off',
-    "react/jsx-handler-names": 'error',
-    "react/jsx-indent-props": ['error',4],
-    "react/jsx-indent": ['error',4],
-    "react/jsx-key": 'error',
-    "react/jsx-max-props-per-line": 'error',
-    "react/jsx-no-bind": ['error', {
-        "ignoreRefs": false,
-        "allowArrowFunctions": true,
-        "allowBind": false
-    }],
-    "react/jsx-no-duplicate-props": 'error',
-    "react/jsx-no-literals": 'off',
-    "react/jsx-no-undef": 'error',
-    "react/jsx-pascal-case": 'error',
-    "jsx-quotes": ['error', "prefer-double"],
-    "react/sort-prop-types": 'error',
-    "react/jsx-sort-props": 'off',
-    "react/jsx-uses-react": 'error',
-    "react/jsx-uses-vars": 'error',
-    "react/no-danger": 'error',
-    "react/no-deprecated": 'error',
-    "react/no-did-mount-set-state": 'error',
-    "react/no-did-update-set-state": 'error',
-    "react/no-direct-mutation-state": 'error',
-    "react/no-is-mounted": 'error',
-    "react/no-multi-comp": 'error',
-    "react/no-set-state": 'off',
-    "react/no-string-refs": 'error',
-    "react/no-unknown-property": 'error',
-    "react/prefer-es6-class": 'error',
-    "react/prop-types": 'error',
-    "react/react-in-jsx-scope": 'error',
-    "react/require-extension": 'error',
-    "react/self-closing-comp": 'error',
-    "react/sort-comp": 'error',
-    "react/wrap-multilines": 'error',
-
-    // details: https://github.com/Intellicode/eslint-plugin-react-native
-    "react-native/no-unused-styles": 2,
-    "react-native/split-platform-components": 2,
-    "react-native/no-inline-styles": 2,
-    "react-native/no-color-literals": 2
+    // Best Practices
+    "accessor-pairs": 2,
+    "block-scoped-var": 2,
+    "complexity": [
+      "error",
+      10
+    ],
+    "consistent-return": 2,
+    "curly": 2,
+    "default-case": 2,
+    "dot-location": [
+      2,
+      "property"
+    ],
+    "dot-notation": 2,
+    "eqeqeq": [
+      2,
+      "allow-null"
+    ],
+    "guard-for-in": 2,
+    "no-alert": 2,
+    "no-caller": 2,
+    "no-case-declarations": 2,
+    "no-div-regex": 2,
+    "no-else-return": 2,
+    "no-empty-pattern": 2,
+    "no-eq-null": 2,
+    "no-eval": 2,
+    "no-extend-native": 2,
+    "no-extra-bind": 2,
+    "no-fallthrough": 2,
+    "no-floating-decimal": 2,
+    "no-implicit-coercion": 2,
+    "no-implied-eval": 2,
+    "no-invalid-this": 2,
+    "no-iterator": 2,
+    "no-labels": 2,
+    "no-lone-blocks": 2,
+    "no-loop-func": 2,
+    "no-magic-numbers": 0,
+    "no-multi-str": 2,
+    "no-native-reassign": 2,
+    "no-new-func": 2,
+    "no-new-wrappers": 2,
+    "no-new": 2,
+    "no-octal-escape": 2,
+    "no-octal": 2,
+    "no-param-reassign": 2,
+    "no-process-env": 0,
+    "no-proto": 2,
+    "no-redeclare": 2,
+    "no-return-assign": 2,
+    "no-script-url": 2,
+    "no-self-compare": 2,
+    "no-sequences": 2,
+    "no-throw-literal": 2,
+    "no-unsafe-negation": 2,
+    "no-unused-expressions": 2,
+    "no-useless-call": 2,
+    "no-useless-concat": 2,
+    "no-useless-rename": 0,
+    "no-void": 2,
+    "no-warning-comments": 1,
+    "no-with": 2,
+    "prefer-destructuring": [
+      2,
+      {
+        "array": false,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "radix": 2,
+    "semi-spacing": 2,
+    "vars-on-top": 0,
+    "wrap-iife": 2,
+    "yoda": 2,
+    // Flow
+    "flowtype/use-flow-type": 2,
+    "flowtype/define-flow-type": 2,
+    "flowtype/space-after-type-colon": [
+      2,
+      "always"
+    ],
+    "flowtype/space-before-type-colon": [
+      2,
+      "never"
+    ],
+    "flowtype/require-valid-file-annotation": [
+      2,
+      "always",
+      {
+        "annotationStyle": "block"
+      }
+    ],
+    // ES6
+    "arrow-body-style": 0,
+    "arrow-parens": 0,
+    "arrow-spacing": 2,
+    "constructor-super": 2,
+    "generator-star-spacing": [
+      2,
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "no-class-assign": 2,
+    "no-confusing-arrow": 2,
+    "no-const-assign": 2,
+    "no-dupe-class-members": 2,
+    "no-this-before-super": 2,
+    "no-var": 2,
+    "object-shorthand": 2,
+    "prefer-arrow-callback": 2,
+    "prefer-const": 2,
+    "prefer-reflect": 0,
+    "prefer-spread": 2,
+    "prefer-template": 2,
+    "rest-spread-spacing": [
+      2,
+      "never"
+    ],
+    // Variables
+    "init-declarations": 0,
+    "no-catch-shadow": 2,
+    "no-delete-var": 2,
+    "no-label-var": 2,
+    "no-shadow": 0,
+    "no-shadow-restricted-names": 2,
+    "no-undef": 2,
+    "no-undef-init": 2,
+    "no-undefined": 0,
+    "no-unused-vars": [
+      2,
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "no-use-before-define": 0,
+    "react/require-default-props": 0,
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/prefer-stateless-function": [
+      2,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/forbid-prop-types": [
+      0,
+      {
+        "forbid": []
+      }
+    ],
+    "import/extensions": [
+      1,
+      "never",
+      {
+        "svg": "always"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "semi": [
+      "error",
+      "never"
+    ]
+  },
+  "env": {
+    "jest": true
   }
 }

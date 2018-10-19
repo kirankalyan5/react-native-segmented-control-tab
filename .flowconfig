@@ -1,0 +1,17 @@
+
+[ignore]
+.*/*[.]android.js
+
+; Ignore unexpected extra "@providesModule"
+.*/node_modules/.*/node_modules/fbjs/.*
+
+[include]
+
+[untyped]
+.*/node_modules/react-native
+
+[libs]
+
+[version]
+^0.83.0
+

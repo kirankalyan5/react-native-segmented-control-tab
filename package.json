@@ -4,7 +4,7 @@
   "description": "A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android.",
   "main": "SegmentedControlTab.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "flow": "flow check"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,20 @@
     "url": "https://github.com/kirankalyan5/react-native-segmented-control-tab/issues"
   },
   "homepage": "https://github.com/kirankalyan5/react-native-segmented-control-tab#readme",
-  "dependencies": {
-    "prop-types": "^15.5.10"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react-native": "^4.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.83.0",
+    "react": "16.6.0-alpha.8af6728",
+    "react-native": "^0.57.2"
   }
 }
