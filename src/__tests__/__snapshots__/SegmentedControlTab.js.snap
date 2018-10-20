@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] = `
+<View
+  removeClippedSubviews={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flexDirection": "row",
+      },
+      Object {},
+    ]
+  }
+>
+  <TabOption
+    accessibilityLabel="One"
+    accessible={true}
+    activeTabBadgeContainerStyle={Object {}}
+    activeTabBadgeStyle={Object {}}
+    activeTabOpacity={1}
+    activeTabStyle={Object {}}
+    activeTabTextStyle={Object {}}
+    allowFontScaling={true}
+    badge={false}
+    enabled={true}
+    firstTabStyle={
+      Array [
+        Object {
+          "borderRightWidth": 0,
+        },
+        Array [
+          Object {
+            "borderBottomLeftRadius": 5,
+            "borderRightWidth": 0,
+            "borderTopLeftRadius": 5,
+          },
+        ],
+      ]
+    }
+    index={0}
+    isTabActive={true}
+    lastTabStyle={Object {}}
+    onTabPress={[Function]}
+    tabBadgeContainerStyle={Object {}}
+    tabBadgeStyle={Object {}}
+    tabStyle={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    tabTextStyle={Object {}}
+    text="One"
+    textNumberOfLines={1}
+  />
+  <TabOption
+    accessibilityLabel="Two"
+    accessible={true}
+    activeTabBadgeContainerStyle={Object {}}
+    activeTabBadgeStyle={Object {}}
+    activeTabOpacity={1}
+    activeTabStyle={Object {}}
+    activeTabTextStyle={Object {}}
+    allowFontScaling={true}
+    badge={false}
+    enabled={true}
+    firstTabStyle={Object {}}
+    index={1}
+    isTabActive={false}
+    lastTabStyle={Object {}}
+    onTabPress={[Function]}
+    tabBadgeContainerStyle={Object {}}
+    tabBadgeStyle={Object {}}
+    tabStyle={
+      Array [
+        Object {},
+        Object {
+          "marginLeft": -1,
+        },
+      ]
+    }
+    tabTextStyle={Object {}}
+    text="Two"
+    textNumberOfLines={1}
+  />
+  <TabOption
+    accessibilityLabel="Three"
+    accessible={true}
+    activeTabBadgeContainerStyle={Object {}}
+    activeTabBadgeStyle={Object {}}
+    activeTabOpacity={1}
+    activeTabStyle={Object {}}
+    activeTabTextStyle={Object {}}
+    allowFontScaling={true}
+    badge={false}
+    enabled={true}
+    firstTabStyle={Object {}}
+    index={2}
+    isTabActive={false}
+    lastTabStyle={
+      Array [
+        Object {
+          "borderLeftWidth": 0,
+        },
+        Array [
+          Object {
+            "borderBottomRightRadius": 5,
+            "borderLeftWidth": 0,
+            "borderTopRightRadius": 5,
+          },
+        ],
+      ]
+    }
+    onTabPress={[Function]}
+    tabBadgeContainerStyle={Object {}}
+    tabBadgeStyle={Object {}}
+    tabStyle={
+      Array [
+        Object {},
+        Object {},
+      ]
+    }
+    tabTextStyle={Object {}}
+    text="Three"
+    textNumberOfLines={1}
+  />
+</View>
+`;
