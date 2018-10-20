@@ -1,1 +1,6 @@
-Example/
+Sample/
+src/__tests__/
+package-lock.json
+.gitignore
+.babelrc
+.flowconfig
