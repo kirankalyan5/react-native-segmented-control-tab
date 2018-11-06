@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { StyleProp, ViewStyle, TextStyle } from "react-native";
 export interface SegmentedControlTabProperties extends React.Props<ReactNativeSegmentedControlTab> {
     // Default ['One', 'Two', 'Three'] ; titles of tabs Default 
