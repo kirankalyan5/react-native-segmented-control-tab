@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "8.11.2"
+jobs:
+  include:
+    - stage: "install dependencies"
+      script: npm install
+    - stage: "Quality Checks"
+      name: "es lint"
+      script: npm run lint
+      name: "flow check"
+      script: npm run flow
+      name: "unit tests"
+      script: npm run tests
