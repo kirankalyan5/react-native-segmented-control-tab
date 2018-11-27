@@ -99,6 +99,7 @@ export default class TabOption extends PureComponent<Props> {
     activeTabOpacity: 1,
     accessibilityLabel: '',
     enabled: false,
+    onTabPress: () => {},
   };
 
   render() {

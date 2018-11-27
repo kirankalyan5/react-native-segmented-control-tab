@@ -1,17 +1,20 @@
 
 [ignore]
 .*/*[.]android.js
-
 ; Ignore unexpected extra "@providesModule"
 .*/node_modules/.*/node_modules/fbjs/.*
 
 [include]
 
+[libs]
+../../flow-typed
+node_modules/react-native/Libraries/react-native/react-native-interface.js
+node_modules/react-native/flow/
+flow/
+flow-github/
+
 [untyped]
 .*/node_modules/react-native
 
-[libs]
-
 [version]
 ^0.83.0
-
