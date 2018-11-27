@@ -11,4 +11,4 @@ jobs:
       name: "flow check"
       script: npm run flow
       name: "unit tests"
-      script: npm run tests
+      script: npm run test
