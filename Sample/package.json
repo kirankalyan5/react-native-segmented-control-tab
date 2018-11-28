@@ -6,12 +6,16 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "expo": "^30.0.1",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "react-native-segmented-control-tab": "^3.3.1"
-  }
+    "react-native-segmented-control-tab": "^3.3.1",
+    "snyk": "^1.110.2"
+  },
+  "snyk": true
 }
