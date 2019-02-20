@@ -8,7 +8,7 @@ export interface SegmentedControlTabProperties extends React.Props<ReactNativeSe
     // Default  [0];Array of indices of tab items to be selected initially - when multiple prop is true else it will take selectedIndex
     selectedIndices?: Array<number>
     // Default  true; Boolean to enable or disable the component
-    enable?: boolean
+    enabled?: boolean
     // Default  false; Boolean which enables the multiple selection option
     multiple?: boolean
     // Default  5;borderRadius of whole tab
