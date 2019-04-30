@@ -77,6 +77,8 @@ class ConsumerComponent extends Component {
 | tabsContainerStyle           | external styles can be passed to override the default styles of the segmentedControl wrapper                                                | base styles added in SegmentedControlTab.js | object(styles)            |
 | tabsContainerDisableStyle    | Custom style that can be passed when `enable` is set to false                                                                               | default style `opacity: 0.6`                | object(styles)            |
 | tabStyle                     | external styles can be passed to override the default styles of the tabs                                                                    | base styles added in SegmentedControlTab.js | object(styles)            |
+| firstTabStyle                | external styles can be passed to override the default styles of the first tab                                                               | base styles added in SegmentedControlTab.js | object(styles)            |
+| lastTabStyle                 | external styles can be passed to override the default styles of the last tab                                                                | base styles added in SegmentedControlTab.js | object(styles)            |
 | tabTextStyle                 | external styles can be passed to override the default styles of the tab title                                                               | base styles added in SegmentedControlTab.js | object(styles)            |
 | activeTabStyle               | external styles can be passed to override the default styles of the active tab                                                              | base styles added in SegmentedControlTab.js | object(styles)            |
 | activeTabTextStyle           | external styles can be passed to override the default styles of the active tab text                                                         | base styles added in SegmentedControlTab.js | object(styles)            |
@@ -97,6 +99,8 @@ class ConsumerComponent extends Component {
 <SegmentedControlTab
   tabsContainerStyle={styles.tabsContainerStyle}
   tabStyle={styles.tabStyle}
+  firstTabStyle={styles.firstTabStyle}
+  lastTabStyle={styles.lastTabStyle}
   tabTextStyle={styles.tabTextStyle}
   activeTabStyle={styles.activeTabStyle}
   activeTabTextStyle={styles.activeTabTextStyle}
@@ -111,6 +115,12 @@ const styles = StyleSheet.create({
     //custom styles
   },
   tabStyle: {
+    //custom styles
+  },
+  firstTabStyle: {
+    //custom styles
+  },
+  lastTabStyle: {
     //custom styles
   },
   tabTextStyle: {
