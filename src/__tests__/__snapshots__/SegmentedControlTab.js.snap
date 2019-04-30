@@ -36,6 +36,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
             "borderTopLeftRadius": 5,
           },
         ],
+        Object {},
       ]
     }
     index={0}
@@ -110,6 +111,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
             "borderTopRightRadius": 5,
           },
         ],
+        Object {},
       ]
     }
     onTabPress={[Function]}
