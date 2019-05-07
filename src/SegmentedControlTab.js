@@ -13,6 +13,8 @@ import TabOption from './TabOption'
 
 type Props = {
   tabStyle: ViewStyleProp,
+  firstTabStyle: ViewStyleProp,
+  lastTabStyle: ViewStyleProp,
   activeTabStyle: ViewStyleProp,
   tabTextStyle: TextStyleProp,
   activeTabTextStyle: TextStyleProp,
@@ -91,6 +93,8 @@ export default class SegmentedControlTab extends PureComponent<Props> {
     tabsContainerStyle: {},
     tabsContainerDisableStyle: { opacity: 0.6 },
     tabStyle: {},
+    firstTabStyle: {},
+    lastTabStyle: {},
     activeTabStyle: {},
     tabTextStyle: {},
     activeTabTextStyle: {},
@@ -117,6 +121,8 @@ export default class SegmentedControlTab extends PureComponent<Props> {
       tabsContainerStyle,
       tabsContainerDisableStyle,
       tabStyle,
+      firstTabStyle,
+      lastTabStyle,
       activeTabStyle,
       tabTextStyle,
       activeTabTextStyle,
@@ -132,14 +138,14 @@ export default class SegmentedControlTab extends PureComponent<Props> {
       activeTabOpacity,
       enabled,
     } = this.props
-    const firstTabStyle = [
+    const firstTabStyleDefault = [
       {
         borderRightWidth: values && values.length === 2 ? 1 : 0,
         borderTopLeftRadius: borderRadius,
         borderBottomLeftRadius: borderRadius,
       },
     ]
-    const lastTabStyle = [
+    const lastTabStyleDefault = [
       {
         borderLeftWidth: 0,
         borderTopRightRadius: borderRadius,
@@ -173,11 +179,11 @@ export default class SegmentedControlTab extends PureComponent<Props> {
               onTabPress={indexs => handleTabPress(indexs, multiple, selectedIndex, onTabPress)
               }
               firstTabStyle={
-                index === 0 ? [{ borderRightWidth: 0 }, firstTabStyle] : {}
+                index === 0 ? [{ borderRightWidth: 0 }, firstTabStyleDefault, firstTabStyle] : {}
               }
               lastTabStyle={
                 index === values.length - 1
-                  ? [{ borderLeftWidth: 0 }, lastTabStyle]
+                  ? [{ borderLeftWidth: 0 }, lastTabStyleDefault, lastTabStyle]
                   : {}
               }
               tabStyle={[
