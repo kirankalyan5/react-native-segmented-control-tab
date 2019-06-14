@@ -19,6 +19,10 @@ export interface SegmentedControlTabProperties extends React.Props<ReactNativeSe
     tabsContainerDisableStyle?: StyleProp<ViewStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the tabs
     tabStyle?: StyleProp<ViewStyle>
+    // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the first tab
+    firstTabStyle?: StyleProp<ViewStyle>
+    // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the last tab
+    lastTabStyle?: StyleProp<ViewStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the tab title
     tabTextStyle?: StyleProp<TextStyle>
     // Default  base styles added in SegmentedControlTab.js;external styles can be passed to override the default styles of the active tab
