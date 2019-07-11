@@ -1505,3 +1505,21 @@ patch:
         patched: '2019-07-04T09:04:35.900Z'
     - expo > expo-print > babel-preset-expo > babel-preset-react-native > babel-plugin-transform-es2015-classes > babel-helper-define-map > babel-helper-function-name > babel-template > babel-traverse > babel-types > lodash:
         patched: '2019-07-04T09:04:35.900Z'
+    - snyk > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-11T07:29:48.816Z'
