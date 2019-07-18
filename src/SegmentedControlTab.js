@@ -174,7 +174,8 @@ export default class SegmentedControlTab extends PureComponent<Props> {
                   ? selectedIndices.includes(index)
                   : selectedIndex === index
               }
-              text={item}
+              text={typeof item === 'string' ? item : null}
+              component={React.isValidElement(item) ? item : null}
               textNumberOfLines={textNumberOfLines}
               onTabPress={indexs => handleTabPress(indexs, multiple, selectedIndex, onTabPress)
               }
@@ -202,7 +203,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
               allowFontScaling={allowFontScaling}
               activeTabOpacity={activeTabOpacity}
               accessible={accessible}
-              accessibilityLabel={accessibilityText || item}
+              accessibilityLabel={accessibilityText || typeof item === 'string' ? item : null}
               enabled={enabled}
             />
           )

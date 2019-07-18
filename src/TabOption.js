@@ -19,6 +19,7 @@ type Props = {
   index?: number,
   badge?: any,
   text: string,
+  component: Element,
   firstTabStyle?: ViewStyleProp,
   lastTabStyle?: ViewStyleProp,
   tabStyle?: ViewStyleProp,
@@ -108,6 +109,7 @@ export default class TabOption extends PureComponent<Props> {
       index,
       badge,
       text,
+      component,
       firstTabStyle,
       lastTabStyle,
       tabStyle,
@@ -144,20 +146,23 @@ export default class TabOption extends PureComponent<Props> {
         activeOpacity={activeTabOpacity}
       >
         <View style={{ flexDirection: 'row' }}>
-          <Text
-            style={[
-              styles.tabTextStyle,
-              tabTextStyle,
-              isTabActive
-                ? [styles.activeTabTextStyle, activeTabTextStyle]
-                : {},
-            ]}
-            numberOfLines={textNumberOfLines}
-            allowFontScaling={allowFontScaling}
-            ellipsizeMode="tail"
-          >
-            {text}
-          </Text>
+          {typeof text === 'string' ? (
+              <Text
+                  style={[
+                    styles.tabTextStyle,
+                    tabTextStyle,
+                    isTabActive
+                        ? [styles.activeTabTextStyle, activeTabTextStyle]
+                        : {},
+                  ]}
+                  numberOfLines={textNumberOfLines}
+                  allowFontScaling={allowFontScaling}
+                  ellipsizeMode="tail"
+              >
+                {text}
+              </Text>
+          ) : component }
+
           {Boolean(badge) && (
             <View
               style={[
