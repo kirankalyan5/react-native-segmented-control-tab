@@ -174,8 +174,8 @@ export default class SegmentedControlTab extends PureComponent<Props> {
                   ? selectedIndices.includes(index)
                   : selectedIndex === index
               }
-              text={typeof item === 'string' ? item : null}
-              component={React.isValidElement(item) ? item : null}
+              text={item}
+              component={item}
               textNumberOfLines={textNumberOfLines}
               onTabPress={indexs => handleTabPress(indexs, multiple, selectedIndex, onTabPress)
               }

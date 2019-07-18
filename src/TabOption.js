@@ -161,8 +161,8 @@ export default class TabOption extends PureComponent<Props> {
               >
                 {text}
               </Text>
-          ) : component }
-
+          ) : null }
+          {React.isValidElement(component) ? component : null}
           {Boolean(badge) && (
             <View
               style={[
