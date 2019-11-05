@@ -107,7 +107,7 @@ class ConsumerComponent extends Component {
   selectedIndex={1}
   allowFontScaling={false}
   values={["First", "Second", "Third"]}
-  onPress={index => this.setState({ selected: index })}
+  onTabPress={index => this.setState({ selected: index })}
 />;
 
 const styles = StyleSheet.create({
