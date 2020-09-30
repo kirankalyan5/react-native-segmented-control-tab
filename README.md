@@ -92,7 +92,7 @@ class ConsumerComponent extends Component {
 | accessible                   | enables accessibility for each tab                                                                                                          | true                                        | bool                      |
 | accessibilityLabels          | Reads out the given text on each tab press when voice over is enabled. If not set, uses the text passed in as values in props as a fallback | ['Label 1', 'Label 2', 'Label 3']           | array                     |
 | activeTabOpacity             | Opacity value to customize tab press                                                                                                        | 1                                           | number                    |
-
+| textNumberOfLines                 | number of line                                                                                                                    | 1    
 ## Custom styling
 
 ```javascript
