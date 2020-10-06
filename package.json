@@ -42,7 +42,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "flow-bin": "^0.124.0",
-    "jest": "^23.6.0",
+    "jest": "^26.5.2",
     "jest-react-native": "^18.0.0",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "^0.57.2",
