@@ -52,6 +52,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
       ]
     }
     tabTextStyle={Object {}}
+    testID="One"
     text="One"
     textNumberOfLines={1}
   />
@@ -82,6 +83,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
       ]
     }
     tabTextStyle={Object {}}
+    testID="Two"
     text="Two"
     textNumberOfLines={1}
   />
@@ -124,6 +126,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
       ]
     }
     tabTextStyle={Object {}}
+    testID="Three"
     text="Three"
     textNumberOfLines={1}
   />

@@ -23,6 +23,7 @@ exports[`<TabOption /> should render TabOption 1`] = `
       "paddingVertical": 5,
     }
   }
+  testID=""
 >
   <View
     style={
