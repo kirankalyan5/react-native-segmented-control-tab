@@ -35,6 +35,7 @@ type Props = {
   accessible?: boolean,
   activeTabOpacity?: number,
   accessibilityLabel?: string,
+  testID?: string;
   enabled?: boolean,
 }
 
@@ -98,6 +99,7 @@ export default class TabOption extends PureComponent<Props> {
     accessible: true,
     activeTabOpacity: 1,
     accessibilityLabel: '',
+    testID: '',
     enabled: false,
     onTabPress: () => {},
   };
@@ -124,6 +126,7 @@ export default class TabOption extends PureComponent<Props> {
       accessible,
       activeTabOpacity,
       accessibilityLabel,
+      testID,
       enabled,
     } = this.props
     return (
@@ -136,6 +139,7 @@ export default class TabOption extends PureComponent<Props> {
           lastTabStyle,
         ]}
         accessible={accessible}
+        testID={testID}
         accessibilityLabel={accessibilityLabel}
         accessibilityTraits={isTabActive ? 'selected' : 'button'}
         accessibilityComponentType="button"

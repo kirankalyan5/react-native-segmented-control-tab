@@ -47,6 +47,8 @@ export interface SegmentedControlTabProperties extends React.Props<ReactNativeSe
     accessible?: boolean
     // Default  ['Label 1', 'Label 2', 'Label 3'];Reads out the given text on each tab press when voice over is enabled. If not set, uses the text passed in as values in props as a fallback
     accessibilityLabels?: Array<string>
+    // Default  ['testID 1', 'testID 2', 'testID 3'];Used for testing purposes to identify elements. If not set, uses the text passed in as values in props as a fallback
+    testIDs?: Array<string>
     // Default  1;Opacity value to customize tab press
     activeTabOpacity?: number
 
