@@ -42,6 +42,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
     index={0}
     isTabActive={true}
     lastTabStyle={Object {}}
+    maxFontSizeMultiplier={null}
     onTabPress={[Function]}
     tabBadgeContainerStyle={Object {}}
     tabBadgeStyle={Object {}}
@@ -71,6 +72,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
     index={1}
     isTabActive={false}
     lastTabStyle={Object {}}
+    maxFontSizeMultiplier={null}
     onTabPress={[Function]}
     tabBadgeContainerStyle={Object {}}
     tabBadgeStyle={Object {}}
@@ -116,6 +118,7 @@ exports[`<SegmentedControlTab /> should render default SegmentedControlTab 1`] =
         Object {},
       ]
     }
+    maxFontSizeMultiplier={null}
     onTabPress={[Function]}
     tabBadgeContainerStyle={Object {}}
     tabBadgeStyle={Object {}}

@@ -89,6 +89,7 @@ class ConsumerComponent extends Component {
 | activeTabBadgeStyle          | external style can be passed to override the default style of the active badge text                                                         | base styles added in SegmentedControlTab.js | object(styles)            |
 | onTabPress                   | call-back function when a tab is selected                                                                                                   | () => {}                                    | func                      |
 | allowFontScaling             | whether the segment & badge text should allow font scaling (default matches React Native default)                                           | true                                        | bool                      |
+| maxFontSizeMultiplier        | the maximum font scale for the segment & badge text, only applicable if font scaling is enabled (default matches React Native default)      | null                                        | number                    |
 | accessible                   | enables accessibility for each tab                                                                                                          | true                                        | bool                      |
 | accessibilityLabels          | Reads out the given text on each tab press when voice over is enabled. If not set, uses the text passed in as values in props as a fallback | ['Label 1', 'Label 2', 'Label 3']           | array                     |
 | activeTabOpacity             | Opacity value to customize tab press                                                                                                        | 1                                           | number                    |
@@ -106,6 +107,7 @@ class ConsumerComponent extends Component {
   activeTabTextStyle={styles.activeTabTextStyle}
   selectedIndex={1}
   allowFontScaling={false}
+  maxFontSizeMultiplier={1.1}
   values={["First", "Second", "Third"]}
   onTabPress={index => this.setState({ selected: index })}
 />;

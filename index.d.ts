@@ -43,6 +43,8 @@ export interface SegmentedControlTabProperties extends React.Props<ReactNativeSe
     onTabPress?: (index: number) => void
     // Default  true;whether the segment & badge text should allow font scaling (default matches React Native default)
     allowFontScaling?: boolean
+    // Default  null;the maximum font scale for the segment & badge text, only applicable if font scaling is enabled (default matches React Native default)
+    maxFontSizeMultiplier?: number | null
     // Default  true;enables accessibility for each tab
     accessible?: boolean
     // Default  ['Label 1', 'Label 2', 'Label 3'];Reads out the given text on each tab press when voice over is enabled. If not set, uses the text passed in as values in props as a fallback

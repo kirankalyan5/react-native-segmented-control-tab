@@ -25,6 +25,7 @@ type Props = {
   onTabPress: Function,
   textNumberOfLines: number,
   allowFontScaling: boolean,
+  maxFontSizeMultiplier: number | null,
   accessible: boolean,
   activeTabOpacity: number,
   enabled: boolean,
@@ -116,6 +117,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
     borderRadius: 5,
     textNumberOfLines: 1,
     allowFontScaling: true,
+    maxFontSizeMultiplier: null,
     activeTabOpacity: 1,
     enabled: true,
   };
@@ -144,6 +146,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
       onTabPress,
       textNumberOfLines,
       allowFontScaling,
+      maxFontSizeMultiplier,
       accessible,
       accessibilityLabels,
       testIDs,
@@ -216,6 +219,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
               tabBadgeStyle={tabBadgeStyle}
               activeTabBadgeStyle={activeTabBadgeStyle}
               allowFontScaling={allowFontScaling}
+              maxFontSizeMultiplier={maxFontSizeMultiplier}
               activeTabOpacity={activeTabOpacity}
               accessible={accessible}
               accessibilityLabel={accessibilityText || item}

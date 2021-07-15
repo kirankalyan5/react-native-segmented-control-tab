@@ -32,6 +32,7 @@ type Props = {
   onTabPress: Function,
   textNumberOfLines?: number,
   allowFontScaling?: boolean,
+  maxFontSizeMultiplier?: number | null,
   accessible?: boolean,
   activeTabOpacity?: number,
   accessibilityLabel?: string,
@@ -123,6 +124,7 @@ export default class TabOption extends PureComponent<Props> {
       onTabPress,
       textNumberOfLines,
       allowFontScaling,
+      maxFontSizeMultiplier,
       accessible,
       activeTabOpacity,
       accessibilityLabel,
@@ -158,6 +160,7 @@ export default class TabOption extends PureComponent<Props> {
             ]}
             numberOfLines={textNumberOfLines}
             allowFontScaling={allowFontScaling}
+            maxFontSizeMultiplier={maxFontSizeMultiplier}
             ellipsizeMode="tail"
           >
             {text}
@@ -184,6 +187,7 @@ export default class TabOption extends PureComponent<Props> {
                     : {},
                 ]}
                 allowFontScaling={allowFontScaling}
+                maxFontSizeMultiplier={maxFontSizeMultiplier}
               >
                 {badge}
               </Text>
