@@ -1,6 +1,6 @@
 {
   "name": "react-native-segmented-control-tab",
-  "version": "3.4.1",
+  "version": "4.0.0",
   "description": "A react native component with the same concept of react native's SegmantedControlIOS, Primarily built to support both IOS and Android.",
   "main": "src/SegmentedControlTab.js",
   "scripts": {
