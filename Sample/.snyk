@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.1
+version: v1.22.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -1529,3 +1529,20 @@ patch:
         patched: '2020-02-28T14:19:26.182Z'
     - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > lodash:
         patched: '2020-02-28T14:19:26.182Z'
+  SNYK-JS-LODASH-567746:
+    - expo > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
+    - expo > babel-preset-expo > metro-react-native-babel-preset > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
+    - expo > babel-preset-expo > metro-react-native-babel-preset > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
+    - expo > babel-preset-expo > metro-react-native-babel-preset > @babel/plugin-transform-parameters > @babel/helper-call-delegate > @babel/traverse > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
+    - expo > babel-preset-expo > metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
+    - expo > babel-preset-expo > metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/generator > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
+    - expo > babel-preset-expo > metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
+    - expo > babel-preset-expo > metro-react-native-babel-preset > @babel/plugin-transform-exponentiation-operator > @babel/helper-builder-binary-assignment-operator-visitor > @babel/helper-explode-assignable-expression > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2022-01-17T21:41:41.641Z'
