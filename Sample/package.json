@@ -15,7 +15,7 @@
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-native-segmented-control-tab": "^3.3.1",
-    "snyk": "^1.465.0"
+    "snyk": "^1.1024.0"
   },
   "snyk": true
 }
