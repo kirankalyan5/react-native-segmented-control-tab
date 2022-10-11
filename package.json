@@ -45,7 +45,7 @@
     "jest": "^23.6.0",
     "jest-react-native": "^18.0.0",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "^0.57.2",
+    "react-native": "^0.70.2",
     "react-test-renderer": "^16.5.2"
   },
   "jest": {
