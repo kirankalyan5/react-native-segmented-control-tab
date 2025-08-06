@@ -34,7 +34,7 @@
     "babel-jest": "^23.6.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react-native": "^4.0.1",
-    "eslint": "^5.7.0",
+    "eslint": "^9.32.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-flowtype": "^3.0.0",
@@ -45,7 +45,7 @@
     "jest": "^23.6.0",
     "jest-react-native": "^18.0.0",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "^0.57.2",
+    "react-native": "^0.80.2",
     "react-test-renderer": "^16.5.2"
   },
   "jest": {
